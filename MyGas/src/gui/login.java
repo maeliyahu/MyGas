@@ -140,7 +140,7 @@ public class login {
 		
 		/*##### Employee Window #####*/
 		final MarkeingEmloyee mrkEmp=new MarkeingEmloyee(panel);
-		frame.getContentPane().add(mrkEmp.Employee);
+		frame.getContentPane().add(mrkEmp);
 		/*##### Employee Window #####*/
 		
 		
@@ -197,7 +197,7 @@ public class login {
 				 *  Check here the id Employee in Employee  table*/
 					panel.setVisible(false);
 					panel.remove(EmptyField);
-					marketMng.setVisible(true);
+					mrkEmp.setVisible(true);
 
 			}
 			}

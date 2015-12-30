@@ -1,5 +1,5 @@
 package guiClient;
-
+import gui.*;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -7,32 +7,27 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class orderFuel extends JPanel {
-	private JPanel owner;
-	private JPanel panelback;
+public class orderFuel extends formPanel {
+
 	private JTextField textField;
 	/**
 	 * Create the panel.
 	 */
-	public orderFuel(JPanel panelback) {
-		owner=this;
-		this.panelback=panelback;
-		setBackground(Color.DARK_GRAY);
-		this.setBounds(0, 0, 800, 500);
-		setLayout(null);
-		String[] types={"Regular","Urgent"};
-		JLabel orderWin = new JLabel("Order Window");
-		orderWin.setForeground(new Color(255, 255, 204));
-		orderWin.setFont(new Font("Tahoma", Font.BOLD, 20));
-		orderWin.setBounds(10, 11, 170, 24);
-		add(orderWin);
+	public orderFuel(JFrame frame,JPanel panelback) {
+		super(frame,panelback);
+		title.setText("Order Window");
+		path.setText("Login/Client window/Order Window");
 		
+		
+		
+		String[] types={"Regular","Urgent"};
+				
 		JButton btnBack = new JButton("Back");
-
 		btnBack.setBackground(new Color(255, 255, 204));
 		btnBack.setBounds(701, 12, 89, 23);
 		add(btnBack);
@@ -65,6 +60,8 @@ public class orderFuel extends JPanel {
 		done.setBounds(266, 193, 196, 45);
 		add(done);
 		
+
+		
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				owner.setVisible(false);
@@ -72,7 +69,5 @@ public class orderFuel extends JPanel {
 			}
 		});
 	}
-	public void backpanel(){
-		this.panelback.setVisible(true);
-	}
+
 }

@@ -1,4 +1,5 @@
 package guiClient;
+import gui.*;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -29,44 +30,23 @@ import java.awt.FlowLayout;
 import javax.swing.JList;
 import javax.swing.ImageIcon;
 
-public class client extends JPanel {
-	public JPanel owner;
-	private JPanel panelback;
-	private JFrame framel;
+public class client extends formPanel {
+
 /*684 x 442 ******/
 	/**
 	 * Create the panel.
 	 */
 	public client(JFrame frame,JPanel panelback ) {
-		owner=this;
-		this.panelback=panelback;
-		this.framel=frame;
-		String[] options={ "Choose an Option" ,"Follow Order", "Order Fuel" };
-		setLayout(null);
-		setBounds(0, 25, 800, 500);
-
-		setBackground(Color.DARK_GRAY);
-		//frame.getContentPane().add(Client, "name_12054733026394");
-		setLayout(null);
+		super(frame,panelback);
+		title.setText("Client Window");
+		path.setText("Login/Client window");
 		
-		JLabel lblClientWindow = new JLabel("Client Window");
-		lblClientWindow.setForeground(new Color(255, 255, 204));
-		lblClientWindow.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblClientWindow.setBounds(10, 11, 170, 24);
-		add(lblClientWindow);
 		
 		JButton btnBack = new JButton("Back");
-
 		btnBack.setBackground(new Color(255, 255, 204));
-
 		btnBack.setBounds(701, 12, 89, 23);
 		add(btnBack);
 		
-		JLabel welcome = new JLabel("Login/Client window");
-		welcome.setForeground(new Color(255, 255, 204));
-		welcome.setFont(new Font("Tahoma", Font.BOLD, 14));
-		welcome.setBounds(10, 38, 159, 24);
-		add(welcome);
 		
 		JLabel name = new JLabel("");
 		name.setBounds(80, 38, 46, 14);
@@ -102,7 +82,7 @@ public class client extends JPanel {
 		});
 		btnFollowOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				followOrder fo=new followOrder(owner);
+				followOrder fo=new followOrder(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(fo);
 				fo.setVisible(true);
@@ -111,7 +91,7 @@ public class client extends JPanel {
 		
 		btnOrderFuel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				orderFuel order=new orderFuel(owner);
+				orderFuel order=new orderFuel(null, owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(order);
 				order.setVisible(true);
@@ -119,9 +99,5 @@ public class client extends JPanel {
 		});
 	}
 	
-	
-	public void backpanel(){
-		this.panelback.setVisible(true);
-	}
 
 }

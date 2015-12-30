@@ -6,6 +6,7 @@ package gui;
  * mazuzdikla
  * ok
  * ok
+ * 
  * password : qazplm12345 */
 public class firstgui {
 

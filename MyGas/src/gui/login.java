@@ -145,8 +145,8 @@ public class login {
 		
 		
 		/*##### Setting Window #####*/
-		final setting set=new setting(panel);
-		frame.getContentPane().add(set.set);
+		final setting set=new setting(frame,panel);
+		frame.getContentPane().add(set);
 		JButton btSetting = new JButton("Setting");
 		btSetting.setBackground(new Color(255, 255, 204));
 		btSetting.setBounds(725, 15, 89, 23);
@@ -160,8 +160,8 @@ public class login {
 		/*##### marketing Manager Window #####*/
 		
 		/*##### NFC window #####*/
-		final NFC nfc=new NFC(panel);
-		frame.getContentPane().add(nfc.NFC);	
+		final NFC nfc=new NFC(frame,panel);
+		frame.getContentPane().add(nfc);	
 		/*##### NFC window #####*/		
 		
 		
@@ -207,7 +207,7 @@ public class login {
 			public void actionPerformed(ActionEvent arg0) {
 				panel.setVisible(false);
 				panel.remove(EmptyField);
-				set.set.setVisible(true);
+				set.setVisible(true);
 				
 			}
 		});
@@ -231,7 +231,7 @@ public class login {
 		FastFuel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel.setVisible(false);
-				nfc.NFC.setVisible(true);
+				nfc.setVisible(true);
 			}
 		});
 

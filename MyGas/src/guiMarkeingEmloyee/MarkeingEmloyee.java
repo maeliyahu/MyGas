@@ -105,7 +105,5 @@ public class MarkeingEmloyee extends formPanel {
 			}
 		});
 	}
-	public void backpanel(){
-		this.panelback.setVisible(true);
-	}
+
 }

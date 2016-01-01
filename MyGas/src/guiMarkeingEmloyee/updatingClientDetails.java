@@ -14,6 +14,9 @@ public class updatingClientDetails extends formPanel {
 	
 	public updatingClientDetails(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
+		title.setText("Updating client details");
+		path.setText("Login/Employee window/Updating client details");
+		
 
 
 	}

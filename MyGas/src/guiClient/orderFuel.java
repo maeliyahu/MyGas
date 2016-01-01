@@ -27,10 +27,6 @@ public class orderFuel extends formPanel {
 		
 		String[] types={"Regular","Urgent"};
 				
-		JButton btnBack = new JButton("Back");
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setBounds(701, 12, 89, 23);
-		add(btnBack);
 		
 		JComboBox comboBox = new JComboBox(types);
 		comboBox.setBackground(new Color(255, 255, 204));
@@ -60,14 +56,6 @@ public class orderFuel extends formPanel {
 		done.setBounds(266, 193, 196, 45);
 		add(done);
 		
-
-		
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				owner.setVisible(false);
-				backpanel();
-			}
-		});
 	}
 
 }

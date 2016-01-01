@@ -16,11 +16,7 @@ public class followOrder extends formPanel {
 		super(frame,panelback);
 		title.setText("Follow Order Window");
 		path.setText("Login/Client window/Follow Order Window");
-		JButton button = new JButton("Back");
 
-		button.setBackground(new Color(255, 255, 204));
-		button.setBounds(701, 13, 89, 23);
-		add(button);
 
 		
 		JComboBox comboBox = new JComboBox();
@@ -35,13 +31,7 @@ public class followOrder extends formPanel {
 		add(orderNum);
 		
 		
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			owner.setVisible(false);
-			backpanel();
-			}
-			
-		});
+
 
 	}
 }

@@ -1,5 +1,8 @@
 package guiMarkeingEmloyee;
 
+import gui.*;
+import guiClient.followOrder;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
@@ -13,60 +16,42 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 
-public class MarkeingEmloyee extends JPanel {
-	public JPanel owner;
-	private JPanel panelback;
+public class MarkeingEmloyee extends formPanel {
+
 	/**
 	 * Create the panel.
 	 */
-	public MarkeingEmloyee(JPanel panelback) {
-		this.owner=this;
-		this.panelback=panelback;
-		String[] options={"Choose an Option", "Updating client details","Client registration" ,"Produce customer data rating", "Campaign pattern defining" };
-		setBackground(Color.DARK_GRAY);
-		setBounds(0, 25, 800, 500);
-		//frame.getContentPane().add(Employee, "name_12054748619064");
-		setLayout(null);
-		
-		JLabel lblEmployeeWindow = new JLabel("Employee Window");
-		lblEmployeeWindow.setForeground(new Color(255, 255, 204));
-		lblEmployeeWindow.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblEmployeeWindow.setBounds(10, 11, 170, 24);
-		add(lblEmployeeWindow);
-		
-		JButton btnBack_1 = new JButton("Back");
-	
-		btnBack_1.setBackground(new Color(255, 255, 204));
+	public MarkeingEmloyee(JFrame frame,JPanel panelback) {
+		super(frame,panelback);
+		title.setText("Employee Window");
+		path.setText("Login/Employee window");
 
-		btnBack_1.setBounds(10, 466, 89, 23);
-		add(btnBack_1);
-		
-		JLabel path = new JLabel("Login/Employee window");
-		path.setForeground(new Color(255, 255, 204));
-		path.setFont(new Font("Tahoma", Font.BOLD, 14));
-		path.setBounds(10, 30, 180, 24);
-		add(path);
-		
+
 		JButton btnUpdate = new JButton("Updating client details");
+
 		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnUpdate.setBackground(new Color(255, 255, 204));
 		btnUpdate.setBounds(282, 92, 245, 41);
 		add(btnUpdate);
 		
 		JButton btnRegistration = new JButton("Client registration");
+
 		btnRegistration.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRegistration.setBackground(new Color(255, 255, 204));
 		btnRegistration.setBounds(282, 143, 245, 41);
 		add(btnRegistration);
 		
 		JButton btnRating = new JButton("Produce customer data rating");
+
 		btnRating.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRating.setBackground(new Color(255, 255, 204));
 		btnRating.setBounds(282, 195, 245, 41);
 		add(btnRating);
 		
 		JButton btnPattern = new JButton("Campaign pattern defining");
+	
 		btnPattern.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnPattern.setBackground(new Color(255, 255, 204));
 		btnPattern.setBounds(282, 246, 245, 41);
@@ -83,10 +68,40 @@ public class MarkeingEmloyee extends JPanel {
 		add(clientIcon);
 		
 		
-		btnBack_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				updatingClientDetails update=new updatingClientDetails(null,owner);
 				owner.setVisible(false);
-				backpanel();
+				framel.getContentPane().add(update);
+				update.setVisible(true);
+			}
+		});
+		
+		btnRegistration.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clientReg register=new clientReg(null,owner);
+				owner.setVisible(false);
+				framel.getContentPane().add(register);
+				register.setVisible(true);
+			}
+		});
+	
+		
+		btnRating.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				produceCustomerRating rating=new produceCustomerRating(null,owner);
+				owner.setVisible(false);
+				framel.getContentPane().add(rating);
+				rating.setVisible(true);
+			}
+		});
+		
+		btnPattern.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				campaignPatternDefining patternDefine=new campaignPatternDefining(null,owner);
+				owner.setVisible(false);
+				framel.getContentPane().add(patternDefine);
+				patternDefine.setVisible(true);
 			}
 		});
 	}

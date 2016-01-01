@@ -42,10 +42,7 @@ public class client extends formPanel {
 		path.setText("Login/Client window");
 		
 		
-		JButton btnBack = new JButton("Back");
-		btnBack.setBackground(new Color(255, 255, 204));
-		btnBack.setBounds(701, 12, 89, 23);
-		add(btnBack);
+
 		
 		
 		JLabel name = new JLabel("");
@@ -73,13 +70,7 @@ public class client extends formPanel {
 		add(btnOrderFuel);
 		setVisible(false);
 
-		btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				owner.setVisible(false);
-				backpanel();
-				
-			}
-		});
+
 		btnFollowOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				followOrder fo=new followOrder(null,owner);

@@ -139,7 +139,7 @@ public class login {
 		
 		
 		/*##### Employee Window #####*/
-		final MarkeingEmloyee mrkEmp=new MarkeingEmloyee(panel);
+		final MarkeingEmloyee mrkEmp=new MarkeingEmloyee(frame,panel);
 		frame.getContentPane().add(mrkEmp);
 		/*##### Employee Window #####*/
 		

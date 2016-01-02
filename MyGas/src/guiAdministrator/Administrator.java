@@ -20,7 +20,12 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
 public class Administrator extends formPanel {
-
+	
+	private JButton btnSendRes;
+	private JButton btnWatchQ;
+	private JLabel name;
+	private Image clientPic;
+	private JLabel clientIcon;
 	/**
 	 * Create the panel.
 	 */
@@ -29,26 +34,24 @@ public class Administrator extends formPanel {
 		title.setText("Administrator Window");
 		path.setText("Login/Administrator");
 		
-		JButton btnSendRes = new JButton("Send response");
-
+		btnSendRes= new JButton("Send response");
 		btnSendRes.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnSendRes.setBackground(new Color(255, 255, 204));
 		btnSendRes.setBounds(303, 114, 197, 40);
 		add(btnSendRes);
 		
-		JButton btnWatchQ = new JButton("Watch Quarterly Reports");
-
+		btnWatchQ = new JButton("Watch Quarterly Reports");
 		btnWatchQ.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnWatchQ.setBackground(new Color(255, 255, 204));
 		btnWatchQ.setBounds(303, 165, 197, 40);
 		add(btnWatchQ);
 		
-		JLabel name = new JLabel("");
+		name = new JLabel("");
 		name.setBounds(80, 38, 46, 14);
 		add(name);
 		
-		Image clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
-		JLabel clientIcon = new JLabel();
+		clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
+		clientIcon = new JLabel();
 		clientIcon.setIcon(new ImageIcon(clientPic));
 		clientIcon.setBounds(662, 372, 128, 128);
 		add(clientIcon);

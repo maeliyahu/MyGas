@@ -34,6 +34,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
 
 import java.awt.Image;
+import java.util.ArrayList;
 
 
 public class login {
@@ -41,6 +42,16 @@ public class login {
 	public JFrame frame;
 	private JTextField Idnumber;
 	private JTextField Passwrd;
+	private JPanel panel;
+	private JComboBox TypeOfPerson;
+	private JLabel loginlabel;
+	private JButton ok;
+	private JLabel lblIdNumber;
+	private JButton FastFuel;
+	private Image speed;
+	private JLabel lblPassword;
+	private JLabel EmptyField;
+	private ArrayList <String> login;
 	/**
 	 * Launch the application.
 	 */
@@ -66,25 +77,25 @@ public class login {
 		frame.setResizable(false);
 		
 		/*##### first Window #####*/
-		final JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setBackground(Color.darkGray);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		panel.setVisible(true);
 		
-		final JComboBox TypeOfPerson = new JComboBox(login);
+		TypeOfPerson = new JComboBox(login);
 		TypeOfPerson.setBackground(new Color(255, 255, 204));
 		TypeOfPerson.setBounds(263, 116, 267, 20);
 		panel.add(TypeOfPerson);
 		
-		JLabel loginlabel = new JLabel("Login");
+		loginlabel = new JLabel("Login");
 		loginlabel.setBackground(new Color(255, 255, 204));
 		loginlabel.setForeground(new Color(255, 255, 204));
 		loginlabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		loginlabel.setBounds(10, 9, 71, 26);
 		panel.add(loginlabel);	
 	
-		JButton ok = new JButton("OK");
+		ok = new JButton("OK");
 		ok.setBackground(new Color(255, 255, 204));
 		ok.setBounds(263, 147, 267, 44);
 		panel.add(ok);
@@ -99,16 +110,16 @@ public class login {
 		Passwrd.setBounds(263, 84, 267, 26);
 		panel.add(Passwrd);
 		
-		JLabel lblIdNumber = new JLabel("Id number:");
+		lblIdNumber = new JLabel("Id number:");
 		lblIdNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblIdNumber.setBackground(new Color(255, 255, 204));
 		lblIdNumber.setForeground(new Color(255, 255, 204));
 		lblIdNumber.setBounds(169, 54, 84, 20);
 		panel.add(lblIdNumber);
 		
-		JButton FastFuel = new JButton("Fast Fuelling");
+		FastFuel = new JButton("Fast Fuelling");
 
-		Image speed=new ImageIcon(this.getClass().getResource("/speed.png")).getImage();
+		speed=new ImageIcon(this.getClass().getResource("/speed.png")).getImage();
 		FastFuel.setIcon( new ImageIcon(speed));
 		FastFuel.setBackground(new Color(255, 255, 204));
 		FastFuel.setFont(new Font("Tahoma", Font.BOLD, 17));
@@ -116,14 +127,14 @@ public class login {
 		FastFuel.setBounds(263, 311, 267, 91);
 		panel.add(FastFuel);
 		
-		JLabel lblPassword = new JLabel("Password:");
+		lblPassword = new JLabel("Password:");
 		lblPassword.setForeground(new Color(255, 255, 204));
 		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblPassword.setBackground(new Color(255, 255, 204));
 		lblPassword.setBounds(169, 85, 84, 20);
 		panel.add(lblPassword);
 		
-		final JLabel EmptyField = new JLabel();		
+		EmptyField = new JLabel();		
 		EmptyField.setText("Empty Field or Inncorrect Password");
 		EmptyField.setForeground(new Color(255, 255, 204));
 		EmptyField.setBounds(227, 200, 267, 20);
@@ -169,6 +180,7 @@ public class login {
 		
 		ok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//login=searchUserInDB(Idnumber.getText())   
 
 					if(Idnumber.getText().equals("")){
 

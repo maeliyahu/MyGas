@@ -52,6 +52,7 @@ public class formPanel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				owner.setVisible(false);
 				backpanel();
+				//owner=null;
 				
 			}
 		});

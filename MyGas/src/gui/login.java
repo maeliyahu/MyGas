@@ -1,4 +1,7 @@
 package gui;
+
+import guiStationManager.*;
+import guiAdministrator.*;
 import guiClient.*;
 import guiMarkeingEmloyee.MarkeingEmloyee;
 import guimarketingMng.*;
@@ -69,7 +72,7 @@ public class login {
 	 */
 	public void initialize() {
 		//frame.getContentPane().add(tr);
-		String[] login= { "Client", "Employee" };
+		String[] login= { "Client", "Marketing Employee", "Marketing Manager","Administrator","Station Manager"  };
 		frame = new JFrame("My Fuel");
 		frame.setBounds(100, 100, 830, 530);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -142,17 +145,11 @@ public class login {
 		
 		
 		
-		/*##### Client Window #####*/
-		final client cl=new client(frame,panel);
-		addPanel(cl);
-		/*##### Client Window #####*/
+
 		
 		
 		
-		/*##### Employee Window #####*/
-		final MarkeingEmloyee mrkEmp=new MarkeingEmloyee(frame,panel);
-		frame.getContentPane().add(mrkEmp);
-		/*##### Employee Window #####*/
+
 		
 		
 		/*##### Setting Window #####*/
@@ -180,6 +177,7 @@ public class login {
 		
 		ok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				//login=searchUserInDB(Idnumber.getText())   
 
 					if(Idnumber.getText().equals("")){
@@ -191,27 +189,68 @@ public class login {
 						
 					}
 					
-				
-				 if(TypeOfPerson.getSelectedItem().toString().toString().equals("Client")){
+				/*##### Client Window #####*/
+				 if(TypeOfPerson.getSelectedItem().toString().equals("Client")){
 					/*##### over here  we need to put the client gui
 					 * Check here the id client in client table*/
+
+						final client cl=new client(frame,panel);
+						addPanel(cl);
+
 					 if(Passwrd.getText().equals("1234")){
 						 panel.setVisible(false);
 						 panel.remove(EmptyField);
 						 //Client.setVisible(false);
 						 cl.setVisible(true);
 					 }
-						 
-				
 				}
-				if(TypeOfPerson.getSelectedItem().toString().toString().equals("Employee")){
-				/*####  over here  we need to put the Employee gui
-				 *  Check here the id Employee in Employee  table*/
+				/*##### Client Window #####*/	 
+				 
+				 
+				/*##### Employee Window #####*/
+				if(TypeOfPerson.getSelectedItem().toString().equals("Marketing Employee")){
+					final MarkeingEmloyee mrkEmp=new MarkeingEmloyee(frame,panel);
+					frame.getContentPane().add(mrkEmp);
 					panel.setVisible(false);
 					panel.remove(EmptyField);
 					mrkEmp.setVisible(true);
-
-			}
+				}
+				/*##### Employee Window #####*/
+				
+				
+				/*##### Employee Window #####*/
+				if(TypeOfPerson.getSelectedItem().toString().equals("Marketing Manager")){
+					final marketingMng mrkMng=new marketingMng(frame,panel);
+					frame.getContentPane().add(mrkMng);
+					panel.setVisible(false);
+					panel.remove(EmptyField);
+					mrkMng.setVisible(true);
+				}
+				/*##### Employee Window #####*/
+				
+				
+				/*##### Administrator Window #####*/
+				if(TypeOfPerson.getSelectedItem().toString().equals("Administrator")){
+					final Administrator admin=new Administrator(frame,panel);
+					frame.getContentPane().add(admin);
+					panel.setVisible(false);
+					panel.remove(EmptyField);
+					admin.setVisible(true);
+				}
+				/*##### Administrator Window #####*/
+				
+				
+				/*##### Station Manager Window #####*/
+				if(TypeOfPerson.getSelectedItem().toString().equals("Station Manager")){
+					final stationManager stationMng=new stationManager(frame,panel);
+					frame.getContentPane().add(stationMng);
+					panel.setVisible(false);
+					panel.remove(EmptyField);
+					stationMng.setVisible(true);
+				}
+				/*##### Station Manager Window #####*/
+				
+				
 			}
 		});
 		
@@ -224,21 +263,7 @@ public class login {
 			}
 		});
 		
-		/*btnBack.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel.setVisible(true);
-				Employee.setVisible(false);
-				Client.setVisible(false);
-			}
-		});
-		
-		btnBack_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel.setVisible(true);
-				Employee.setVisible(false);
-				Client.setVisible(false);
-			}
-		});*/
+
 		
 		FastFuel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

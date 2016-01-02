@@ -37,13 +37,13 @@ public class Administrator extends formPanel {
 		btnSendRes= new JButton("Send response");
 		btnSendRes.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnSendRes.setBackground(new Color(255, 255, 204));
-		btnSendRes.setBounds(303, 114, 197, 40);
+		btnSendRes.setBounds(303, 114, 240, 40);
 		add(btnSendRes);
 		
 		btnWatchQ = new JButton("Watch Quarterly Reports");
 		btnWatchQ.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnWatchQ.setBackground(new Color(255, 255, 204));
-		btnWatchQ.setBounds(303, 165, 197, 40);
+		btnWatchQ.setBounds(303, 165, 240, 40);
 		add(btnWatchQ);
 		
 		name = new JLabel("");

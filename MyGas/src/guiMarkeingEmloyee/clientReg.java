@@ -2,14 +2,22 @@ package guiMarkeingEmloyee;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import gui.*;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Color;
 import java.awt.Font;
+
 import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 public class clientReg extends formPanel {
-	private JTextField textField;
+	private JTextField textField_0;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -38,6 +46,7 @@ public class clientReg extends formPanel {
 	private JLabel lblFuelCompany_1;
 	private JLabel lblFuelCompany_2;
 	private JButton btnDone;
+	protected ArrayList <String> login=new ArrayList();
 
 	/**
 	 * Create the panel.
@@ -47,10 +56,10 @@ public class clientReg extends formPanel {
 		title.setText("Client registration");
 		path.setText("Login/Marketing Employee window/Client registration");
 		
-		textField = new JTextField();
-		textField.setBounds(167, 91, 170, 24);
-		add(textField);
-		textField.setColumns(10);
+		textField_0 = new JTextField();
+		textField_0.setBounds(167, 91, 170, 24);
+		add(textField_0);
+		textField_0.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
@@ -216,10 +225,34 @@ public class clientReg extends formPanel {
 		add(lblFuelCompany_2);
 		
 		btnDone = new JButton("Done");
+
 		btnDone.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnDone.setBackground(new Color(255, 255, 204));
 		btnDone.setBounds(51, 320, 702, 41);
 		add(btnDone);
+		
+		btnDone.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				login.add(textField_0.getText());
+				login.add(textField_1.getText());
+				login.add(textField_2.getText());
+				login.add(textField_3.getText());
+				login.add(textField_4.getText());
+				login.add(textField_5.getText());
+				login.add(textField_6.getText());
+				login.add(textField_7.getText());
+				login.add(textField_8.getText());
+				login.add(textField_9.getText());
+				login.add(textField_10.getText());
+				login.add(textField_11.getText());
+				login.add(textField_12.getText());
+				login.add(textField_13.getText());
+				for(int i=0;i<login.size();i++)
+					System.out.print(" " + login.get(i));
+				
+				
+			}
+		});
 
 	}
 }

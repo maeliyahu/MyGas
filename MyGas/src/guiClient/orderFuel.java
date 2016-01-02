@@ -21,7 +21,7 @@ public class orderFuel extends formPanel {
 	public orderFuel(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Order Window");
-		path.setText("Login/Client window/Order Window");
+		path.setText("Login/Client Window/Order");
 		
 		
 		

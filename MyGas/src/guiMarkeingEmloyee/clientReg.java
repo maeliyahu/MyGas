@@ -11,7 +11,7 @@ public class clientReg extends formPanel {
 	public clientReg(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Client registration");
-		path.setText("Login/Employee window/Client registration");
+		path.setText("Login/Marketing Employee window/Client registration");
 
 	}
 

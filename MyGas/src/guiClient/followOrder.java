@@ -15,7 +15,7 @@ public class followOrder extends formPanel {
 	public followOrder(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Follow Order Window");
-		path.setText("Login/Client window/Follow Order Window");
+		path.setText("Login/Client Window/Follow Order");
 
 
 		

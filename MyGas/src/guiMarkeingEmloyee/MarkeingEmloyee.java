@@ -25,8 +25,8 @@ public class MarkeingEmloyee extends formPanel {
 	 */
 	public MarkeingEmloyee(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
-		title.setText("Employee Window");
-		path.setText("Login/Employee window");
+		title.setText("Marketing Employee Window");
+		path.setText("Login/Marketing Employee");
 
 
 		JButton btnUpdate = new JButton("Updating client details");

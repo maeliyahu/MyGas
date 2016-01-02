@@ -12,7 +12,7 @@ public class campaignPatternDefining extends formPanel {
 	public campaignPatternDefining(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Campaign pattern defining");
-		path.setText("Login/Employee window/Campaign pattern defining");
+		path.setText("Login/Marketing Employee Window/Campaign pattern defining");
 	}
 
 }

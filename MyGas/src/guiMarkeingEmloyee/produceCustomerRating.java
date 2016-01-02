@@ -12,7 +12,7 @@ public class produceCustomerRating extends formPanel {
 	public produceCustomerRating(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Produce customer data rating");
-		path.setText("Login/Employee window/Produce customer data rating");
+		path.setText("Login/Marketing Employee Window/Produce customer data rating");
 
 	}
 

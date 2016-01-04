@@ -23,6 +23,7 @@ public class stationManager extends formPanel {
 		super(frame,panelback);
 		title.setText("Station Manager Window");
 		path.setText("Login/Station Manager Window");
+		btnBack.setText("Logout");
 		
 		/*"Choose an Option"
 		 *  "Insert fuel stock"

@@ -27,6 +27,7 @@ public class MarkeingEmloyee extends formPanel {
 		super(frame,panelback);
 		title.setText("Marketing Employee Window");
 		path.setText("Login/Marketing Employee");
+		btnBack.setText("Logout");
 
 
 		JButton btnUpdate = new JButton("Updating client details");

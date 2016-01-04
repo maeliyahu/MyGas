@@ -16,6 +16,7 @@ public class formPanel extends JPanel {
 	protected JFrame framel;
 	protected JLabel title;
 	protected JLabel path;
+	protected JButton btnBack;
 	/**
 	 * Create the panel.
 	 */
@@ -27,7 +28,7 @@ public class formPanel extends JPanel {
 		setBounds(0, 25, 800, 500);
 		
 		
-		JButton btnBack = new JButton("Back");
+		btnBack = new JButton("Back");
 		btnBack.setBackground(new Color(255, 255, 204));
 		btnBack.setBounds(10, 466, 89, 23);
 		add(btnBack);

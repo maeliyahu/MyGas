@@ -33,6 +33,7 @@ public class Administrator extends formPanel {
 		super(frame,panelback);
 		title.setText("Administrator Window");
 		path.setText("Login/Administrator");
+		btnBack.setText("Logout");
 		
 		btnSendRes= new JButton("Send response");
 		btnSendRes.setFont(new Font("Tahoma", Font.BOLD, 13));

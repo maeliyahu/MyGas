@@ -24,6 +24,7 @@ public class marketingMng extends formPanel {
 		super(frame,panelback);
 		title.setText("Marketing Manager Window");
 		path.setText("Login/marketing Manager Window");
+		btnBack.setText("Logout");
 		
 		
    /*"Choose an Option"

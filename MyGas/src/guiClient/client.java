@@ -40,6 +40,7 @@ public class client extends formPanel {
 		super(frame,panelback);
 		title.setText("Client Window");
 		path.setText("Login/Client window");
+		btnBack.setText("Logout");
 		
 		
 

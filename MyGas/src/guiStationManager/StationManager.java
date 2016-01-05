@@ -36,18 +36,21 @@ public class StationManager extends FormPanel {
 		add(btnInsertFuelType);
 		
 		JButton btnDeterminingTheThreshold = new JButton("Determining the threshold");
+	
 		btnDeterminingTheThreshold.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnDeterminingTheThreshold.setBackground(new Color(255, 255, 204));
 		btnDeterminingTheThreshold.setBounds(260, 190, 245, 41);
 		add(btnDeterminingTheThreshold);
 		
 		JButton btnApproveFuelOrder = new JButton("Approve fuel order");
+		
 		btnApproveFuelOrder.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnApproveFuelOrder.setBackground(new Color(255, 255, 204));
 		btnApproveFuelOrder.setBounds(260, 244, 245, 41);
 		add(btnApproveFuelOrder);
 		
 		JButton btnProduceQuarterlyReports = new JButton("Produce Quarterly Reports");
+
 		btnProduceQuarterlyReports.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnProduceQuarterlyReports.setBackground(new Color(255, 255, 204));
 		btnProduceQuarterlyReports.setBounds(260, 295, 245, 41);
@@ -65,8 +68,32 @@ public class StationManager extends FormPanel {
 				insert.setVisible(true);
 			}
 		});
+		btnDeterminingTheThreshold.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DeterminingThreshold DetermingThreshold=new DeterminingThreshold(null,owner);
+				owner.setVisible(false);
+				framel.getContentPane().add(DetermingThreshold);
+				DetermingThreshold.setVisible(true);
+			}
+		});
 		
+		btnApproveFuelOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ApproveFuelOrder approveFuelOrder=new ApproveFuelOrder(null,owner);
+				owner.setVisible(false);
+				framel.getContentPane().add(approveFuelOrder);
+				approveFuelOrder.setVisible(true);
+			}
+		});
 		
+		btnProduceQuarterlyReports.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ProduceQuarterlyReports produceQuarterlyReports=new ProduceQuarterlyReports(null,owner);
+				owner.setVisible(false);
+				framel.getContentPane().add(produceQuarterlyReports);
+				produceQuarterlyReports.setVisible(true);
+			}
+		});
 	}
 
 }

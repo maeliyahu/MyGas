@@ -19,8 +19,7 @@ public class InsetFuelStock extends FormPanel {
 		super(frame,panelback);
 		title.setText("Inset Fuel Stock");
 		path.setText("Login/Station Manager Window/Inset Fuel Stock");
-		//btnBack.setText("Back");
-		
+	
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBackground(new Color(255, 255, 204));
 		comboBox.setBounds(385, 183, 157, 25);

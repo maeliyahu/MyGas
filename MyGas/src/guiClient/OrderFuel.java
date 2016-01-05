@@ -12,13 +12,13 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class orderFuel extends formPanel {
+public class OrderFuel extends FormPanel {
 
 	private JTextField textField;
 	/**
 	 * Create the panel.
 	 */
-	public orderFuel(JFrame frame,JPanel panelback) {
+	public OrderFuel(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Order Window");
 		path.setText("Login/Client Window/Order");

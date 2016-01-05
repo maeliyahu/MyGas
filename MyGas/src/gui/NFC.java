@@ -17,7 +17,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-public class NFC extends formPanel {
+public class NFC extends FormPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	/**

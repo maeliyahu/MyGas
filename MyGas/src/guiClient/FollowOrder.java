@@ -10,9 +10,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
-public class followOrder extends formPanel {
+public class FollowOrder extends FormPanel {
 
-	public followOrder(JFrame frame,JPanel panelback) {
+	public FollowOrder(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Follow Order Window");
 		path.setText("Login/Client Window/Follow Order");

@@ -30,13 +30,13 @@ import java.awt.FlowLayout;
 import javax.swing.JList;
 import javax.swing.ImageIcon;
 
-public class client extends formPanel {
+public class Client extends FormPanel {
 
 /*684 x 442 ******/
 	/**
 	 * Create the panel.
 	 */
-	public client(JFrame frame,JPanel panelback ) {
+	public Client(JFrame frame,JPanel panelback ) {
 		super(frame,panelback);
 		title.setText("Client Window");
 		path.setText("Login/Client window");
@@ -74,7 +74,7 @@ public class client extends formPanel {
 
 		btnFollowOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				followOrder fo=new followOrder(null,owner);
+				FollowOrder fo=new FollowOrder(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(fo);
 				fo.setVisible(true);
@@ -83,7 +83,7 @@ public class client extends formPanel {
 		
 		btnOrderFuel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				orderFuel order=new orderFuel(null, owner);
+				OrderFuel order=new OrderFuel(null, owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(order);
 				order.setVisible(true);

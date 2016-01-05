@@ -10,17 +10,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class formPanel extends JPanel {
+public class FormPanel extends JPanel {
 	public JPanel owner;
 	protected JPanel panelback;
 	protected JFrame framel;
 	protected JLabel title;
 	protected JLabel path;
 	protected JButton btnBack;
+	
 	/**
 	 * Create the panel.
 	 */
-	public formPanel(JFrame frame,JPanel panelback) {
+	public FormPanel(JFrame frame,JPanel panelback) {
 		owner=this;
 		this.panelback=panelback;
 		this.framel=frame;
@@ -59,6 +60,9 @@ public class formPanel extends JPanel {
 		});
 		
 	}
+	/**
+	 * return to the previous panel 
+	 */
 	public void backpanel(){
 		this.panelback.setVisible(true);
 	}

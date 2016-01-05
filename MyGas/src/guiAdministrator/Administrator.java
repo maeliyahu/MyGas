@@ -1,7 +1,7 @@
 package guiAdministrator;
 
 import gui.*;
-import guiClient.followOrder;
+import guiClient.FollowOrder;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
-public class Administrator extends formPanel {
+public class Administrator extends FormPanel {
 	
 	private JButton btnSendRes;
 	private JButton btnWatchQ;
@@ -63,7 +63,7 @@ public class Administrator extends formPanel {
 
 		btnSendRes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				sendResponse send=new sendResponse(null,owner);
+				SendResponse send=new SendResponse(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(send);
 				send.setVisible(true);
@@ -72,7 +72,7 @@ public class Administrator extends formPanel {
 		
 		btnWatchQ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				watchQuarterlyReports watch=new watchQuarterlyReports(null,owner);
+				WatchQuarterlyReports watch=new WatchQuarterlyReports(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(watch);
 				watch.setVisible(true);

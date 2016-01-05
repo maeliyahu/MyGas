@@ -16,7 +16,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-public class clientReg extends formPanel {
+public class ClientReg extends FormPanel {
 	private JTextField textField_0;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -51,7 +51,7 @@ public class clientReg extends formPanel {
 	/**
 	 * Create the panel.
 	 */
-	public clientReg(JFrame frame,JPanel panelback) {
+	public ClientReg(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Client registration");
 		path.setText("Login/Marketing Employee window/Client registration");

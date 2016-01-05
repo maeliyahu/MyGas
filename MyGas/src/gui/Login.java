@@ -40,7 +40,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 
-public class login {
+public class Login {
 	
 	public JFrame frame;
 	private JTextField Idnumber;
@@ -63,7 +63,7 @@ public class login {
 	/**
 	 * Create the application.
 	 */
-	public login() {
+	public Login() {
 		initialize();
 	}
 
@@ -153,7 +153,7 @@ public class login {
 		
 		
 		/*##### Setting Window #####*/
-		final setting set=new setting(frame,panel);
+		final Setting set=new Setting(frame,panel);
 		frame.getContentPane().add(set);
 		JButton btSetting = new JButton("Setting");
 		btSetting.setBackground(new Color(255, 255, 204));
@@ -163,7 +163,7 @@ public class login {
 		
 		
 		/*##### marketing Manager Window #####*/
-		final marketingMng marketMng=new marketingMng(frame,panel);
+		final MarketingMng marketMng=new MarketingMng(frame,panel);
 		frame.getContentPane().add(marketMng);	
 		/*##### marketing Manager Window #####*/
 		
@@ -194,7 +194,7 @@ public class login {
 					/*##### over here  we need to put the client gui
 					 * Check here the id client in client table*/
 
-						final client cl=new client(frame,panel);
+						final Client cl=new Client(frame,panel);
 						addPanel(cl);
 
 					 if(Passwrd.getText().equals("1234")){
@@ -220,7 +220,7 @@ public class login {
 				
 				/*##### Employee Window #####*/
 				if(TypeOfPerson.getSelectedItem().toString().equals("Marketing Manager")){
-					final marketingMng mrkMng=new marketingMng(frame,panel);
+					final MarketingMng mrkMng=new MarketingMng(frame,panel);
 					frame.getContentPane().add(mrkMng);
 					panel.setVisible(false);
 					panel.remove(EmptyField);
@@ -242,7 +242,7 @@ public class login {
 				
 				/*##### Station Manager Window #####*/
 				if(TypeOfPerson.getSelectedItem().toString().equals("Station Manager")){
-					final stationManager stationMng=new stationManager(frame,panel);
+					final StationManager stationMng=new StationManager(frame,panel);
 					frame.getContentPane().add(stationMng);
 					panel.setVisible(false);
 					panel.remove(EmptyField);
@@ -273,6 +273,10 @@ public class login {
 		});
 
 	}
+	/**
+	 * This method adding a panel to the frame
+	 * @param toAdd - the pannel to add
+	 */
 	public void addPanel(JPanel toAdd){
 		frame.getContentPane().add(toAdd);	
 	}

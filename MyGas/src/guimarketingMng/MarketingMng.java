@@ -15,12 +15,12 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JComboBox;
 
-public class marketingMng extends formPanel {
+public class MarketingMng extends FormPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public marketingMng(JFrame frame,JPanel panelback ) {
+	public MarketingMng(JFrame frame,JPanel panelback ) {
 		super(frame,panelback);
 		title.setText("Marketing Manager Window");
 		path.setText("Login/marketing Manager Window");

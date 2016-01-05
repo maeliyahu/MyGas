@@ -7,11 +7,11 @@ package gui;
  * ok
  * ok
  * password : qazplm12345 */
-public class firstgui {
+public class Firstgui {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		login r=new login();
+		Login r=new Login();
 		r.frame.setVisible(true);
 		
 	}

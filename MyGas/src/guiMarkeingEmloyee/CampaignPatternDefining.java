@@ -4,12 +4,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import gui.*;
 
-public class campaignPatternDefining extends formPanel {
+public class CampaignPatternDefining extends FormPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public campaignPatternDefining(JFrame frame,JPanel panelback) {
+	public CampaignPatternDefining(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Campaign pattern defining");
 		path.setText("Login/Marketing Employee Window/Campaign pattern defining");

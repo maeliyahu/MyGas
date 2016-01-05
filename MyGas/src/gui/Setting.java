@@ -14,13 +14,17 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class setting extends formPanel {
+public class Setting extends FormPanel {
 	private JTextField textField;
 	private JTextField textField_1;
+	
+	
 	/**
-	 * Create the panel.
+	 * This method create the form panel 
+	 * @param frame - the main frame
+	 * @param panelback - the back panel
 	 */
-	public setting(JFrame frame,JPanel panelback) {
+	public Setting(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Setting Window");
 		path.setText("Login/Setting Window");

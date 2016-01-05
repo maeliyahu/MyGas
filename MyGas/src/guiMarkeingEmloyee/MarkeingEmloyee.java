@@ -1,7 +1,7 @@
 package guiMarkeingEmloyee;
 
 import gui.*;
-import guiClient.followOrder;
+import guiClient.FollowOrder;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
-public class MarkeingEmloyee extends formPanel {
+public class MarkeingEmloyee extends FormPanel {
 
 	/**
 	 * Create the panel.
@@ -71,7 +71,7 @@ public class MarkeingEmloyee extends formPanel {
 		
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				updatingClientDetails update=new updatingClientDetails(null,owner);
+				UpdatingClientDetails update=new UpdatingClientDetails(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(update);
 				update.setVisible(true);
@@ -80,7 +80,7 @@ public class MarkeingEmloyee extends formPanel {
 		
 		btnRegistration.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				clientReg register=new clientReg(null,owner);
+				ClientReg register=new ClientReg(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(register);
 				register.setVisible(true);
@@ -90,7 +90,7 @@ public class MarkeingEmloyee extends formPanel {
 		
 		btnRating.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				produceCustomerRating rating=new produceCustomerRating(null,owner);
+				ProduceCustomerRating rating=new ProduceCustomerRating(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(rating);
 				rating.setVisible(true);
@@ -99,7 +99,7 @@ public class MarkeingEmloyee extends formPanel {
 		
 		btnPattern.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				campaignPatternDefining patternDefine=new campaignPatternDefining(null,owner);
+				CampaignPatternDefining patternDefine=new CampaignPatternDefining(null,owner);
 				owner.setVisible(false);
 				framel.getContentPane().add(patternDefine);
 				patternDefine.setVisible(true);

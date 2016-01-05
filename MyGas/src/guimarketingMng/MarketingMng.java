@@ -3,12 +3,14 @@ package guimarketingMng;
 import gui.*;
 import guiClient.FollowOrder;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Image;
 
 import javax.swing.JButton;
 
@@ -69,6 +71,16 @@ public class MarketingMng extends FormPanel {
 		btnRespondReportOf.setBackground(new Color(255, 255, 204));
 		btnRespondReportOf.setBounds(225, 301, 291, 40);
 		add(btnRespondReportOf);
+		
+		JLabel name = new JLabel("");
+		name.setBounds(80, 38, 46, 14);
+		add(name);
+		
+		Image clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
+		JLabel clientIcon = new JLabel();
+		clientIcon.setIcon(new ImageIcon(clientPic));
+		clientIcon.setBounds(662, 372, 128, 128);
+		add(clientIcon);
 		
 		
    /*"Choose an Option"

@@ -3,11 +3,13 @@ package guiStationManager;
 import gui.*;
 import guiClient.FollowOrder;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.Image;
 
 import javax.swing.JButton;
 
@@ -55,7 +57,15 @@ public class StationManager extends FormPanel {
 		btnProduceQuarterlyReports.setBackground(new Color(255, 255, 204));
 		btnProduceQuarterlyReports.setBounds(260, 295, 245, 41);
 		add(btnProduceQuarterlyReports);
+		JLabel name = new JLabel("");
+		name.setBounds(80, 38, 46, 14);
+		add(name);
 		
+		Image clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
+		JLabel clientIcon = new JLabel();
+		clientIcon.setIcon(new ImageIcon(clientPic));
+		clientIcon.setBounds(662, 372, 128, 128);
+		add(clientIcon); 
 		/*"Choose an Option"
 		 *  "Insert fuel stock"
 		 *  "Determining the threshold level for receiving alert"

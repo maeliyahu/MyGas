@@ -55,6 +55,7 @@ public class Setting extends FormPanel {
 		add(lblPortNumber);
 		
 		JButton button = new JButton("OK");
+		
 		button.setBackground(new Color(255, 255, 204));
 		button.setBounds(413, 104, 96, 58);
 		add(button);
@@ -66,7 +67,24 @@ public class Setting extends FormPanel {
 		lblNewLabel.setBounds(578, 33, 153, 129);
 		add(lblNewLabel);
 		
-		
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String input = textField_1.getText();
+				try
+				{
+					textField_1.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					
+					//add if to check in DB 
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField_1.setText("Error");
+					textField_1.setForeground(Color.RED);
+				}
+			}
+		});
 
 	}
 

@@ -1,13 +1,21 @@
 package guiStationManager;
 import gui.*;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
+
 import java.awt.Color;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InsetFuelStock extends FormPanel {
 	private JTextField textField;
@@ -44,8 +52,31 @@ public class InsetFuelStock extends FormPanel {
 		add(label);
 		
 		JButton button = new JButton("Done");
+		
 		button.setBackground(new Color(255, 255, 204));
 		button.setBounds(237, 278, 305, 45);
 		add(button);
+		
+		
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = textField.getText();
+				try
+				{
+					textField.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					if(inputNum<=0 )
+						throw new NumberFormatException();
+					//add if check in DB
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField.setText("Error");
+					textField.setForeground(Color.RED);
+				}
+			}
+		});
 	}
 }

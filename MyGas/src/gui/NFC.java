@@ -32,6 +32,7 @@ public class NFC extends FormPanel {
 		
 		
 		JButton button = new JButton("OK");
+
 		button.setBackground(new Color(255, 255, 204));
 		button.setBounds(147, 176, 267, 44);
 		add(button);
@@ -67,6 +68,42 @@ public class NFC extends FormPanel {
 		label.setBounds(264, 0, 40, 50);
 		add(label);
 		setVisible(false);
+		
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String input = textField.getText();
+				try
+				{
+					textField.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					
+					//add if to check in DB 
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField.setText("Error");
+					textField.setForeground(Color.RED);
+				}
+				input = textField_1.getText();
+				try
+				{
+					textField_1.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					if( inputNum <=0)
+						throw new NumberFormatException();
+					//add if to check in DB 
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField_1.setText("Error");
+					textField_1.setForeground(Color.RED);
+				}
+				
+			}
+		});
 
 	}
 

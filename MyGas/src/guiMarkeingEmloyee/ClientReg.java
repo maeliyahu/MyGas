@@ -233,6 +233,7 @@ public class ClientReg extends FormPanel {
 		
 		btnDone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				/*
 				login.add(textField_0.getText());
 				login.add(textField_1.getText());
 				login.add(textField_2.getText());
@@ -250,6 +251,70 @@ public class ClientReg extends FormPanel {
 				for(int i=0;i<login.size();i++)
 					System.out.print(" " + login.get(i));
 				
+				*/
+				
+				//ID number
+				String input = textField_0.getText();
+				try
+				{
+					textField_0.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					
+					//add if to check in DB 
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField_0.setText("Error");
+					textField_0.setForeground(Color.RED);
+				}
+				
+				// Vechile amount
+				input = textField_6.getText();
+				try
+				{
+					textField_6.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					if( inputNum<=0 )
+						throw new NumberFormatException();
+					// limit the cars?
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField_6.setText("Error");
+					textField_6.setForeground(Color.RED);
+				}
+				
+				// credit card number
+				input = textField_7.getText();
+				try
+				{
+					textField_7.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField_7.setText("Error");
+					textField_7.setForeground(Color.RED);
+				}
+				
+				// cvv
+				input = textField_9.getText();
+				try
+				{
+					textField_9.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					if(input.length() != 3 || inputNum<0 )
+						throw new NumberFormatException();
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField_9.setText("Error");
+					textField_9.setForeground(Color.RED);
+				}
 				
 			}
 		});

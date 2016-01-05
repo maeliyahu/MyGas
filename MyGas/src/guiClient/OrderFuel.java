@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 public class OrderFuel extends FormPanel {
 
 	private JTextField textField;
+	private JLabel EmptyField;
 	/**
 	 * Create the panel.
 	 */
@@ -26,7 +27,11 @@ public class OrderFuel extends FormPanel {
 		
 		
 		String[] types={"Regular","Urgent"};
-				
+			
+		EmptyField = new JLabel();		
+		EmptyField.setText("Empty Field or Inncorrect Password");
+		EmptyField.setForeground(new Color(255, 255, 204));
+		EmptyField.setBounds(227, 200, 267, 20);
 		
 		JComboBox comboBox = new JComboBox(types);
 		comboBox.setBackground(new Color(255, 255, 204));
@@ -40,11 +45,11 @@ public class OrderFuel extends FormPanel {
 		add(type);
 		
 		textField = new JTextField();
+		
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField.setBounds(341, 122, 121, 24);
 		add(textField);
 		textField.setColumns(10);
-		
 		JLabel btQuantity = new JLabel("Quantity:");
 		btQuantity.setForeground(new Color(255, 255, 204));
 		btQuantity.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -52,10 +57,31 @@ public class OrderFuel extends FormPanel {
 		add(btQuantity);
 		
 		JButton done = new JButton("Done");
+	
 		done.setBackground(new Color(255, 255, 204));
 		done.setBounds(266, 193, 196, 45);
 		add(done);
 		
+		done.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String input = textField.getText();
+				try
+				{
+					textField.setForeground(Color.BLACK);
+					int inputNum = Integer.parseInt(input);
+					if( inputNum <=0)
+						throw new NumberFormatException();
+					//add if to check in DB 
+					
+				}
+				catch(NumberFormatException e1)
+				{
+					textField.setText("Error");
+					textField.setForeground(Color.RED);
+				}
+				
+			}
+		});
 	}
-
+	
 }

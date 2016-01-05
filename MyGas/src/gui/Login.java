@@ -188,6 +188,25 @@ public class Login {
 						
 						
 					}
+					else 
+					{
+						String input = Idnumber.getText();
+						try
+						{
+							Idnumber.setForeground(Color.BLACK);
+							int inputNum = Integer.parseInt(input);
+							
+							//add if to check in DB 
+							
+						}
+						catch(NumberFormatException e1)
+						{
+							Idnumber.setText("Error");
+							Idnumber.setForeground(Color.RED);
+						}
+						
+					}
+					
 					
 				/*##### Client Window #####*/
 				 if(TypeOfPerson.getSelectedItem().toString().equals("Client")){
@@ -196,7 +215,7 @@ public class Login {
 
 						final Client cl=new Client(frame,panel);
 						addPanel(cl);
-
+						//add if to check in DB 
 					 if(Passwrd.getText().equals("1234")){
 						 panel.setVisible(false);
 						 panel.remove(EmptyField);

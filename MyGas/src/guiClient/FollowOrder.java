@@ -1,12 +1,17 @@
 package guiClient;
 import gui.*;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+
 import java.awt.Color;
 import java.awt.Font;
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
@@ -18,7 +23,7 @@ public class FollowOrder extends FormPanel {
 		path.setText("Login/Client Window/Follow Order");
 
 
-		
+		String[] fuelType={"gasoline","motor","diesel","home"};
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBackground(new Color(255, 255, 204));
 		comboBox.setBounds(399, 154, 121, 25);

@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 public class DeterminingThreshold extends FormPanel {
 	private JTextField textField;
@@ -47,9 +48,21 @@ public class DeterminingThreshold extends FormPanel {
 		button.setBounds(227, 231, 305, 45);
 		add(button);
 		
+		String[] fuelType={"gasoline","motor","diesel","home"};
+		JComboBox comboBox = new JComboBox(fuelType);
+		comboBox.setBackground(new Color(255, 255, 204));
+		comboBox.setBounds(375, 143, 157, 25);
+		add(comboBox);
+		
+		JLabel lblFuelType = new JLabel("Fuel Type");
+		lblFuelType.setForeground(new Color(255, 255, 204));
+		lblFuelType.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblFuelType.setBounds(227, 139, 136, 27);
+		add(lblFuelType);
+		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				boolean flag=true;
 				String input = textField.getText();
 				try
 				{
@@ -63,9 +76,16 @@ public class DeterminingThreshold extends FormPanel {
 				{
 					textField.setText("Error");
 					textField.setForeground(Color.RED);
+					flag=false;
+				}
+				if(flag){
+					ArrayList<String> toController=new ArrayList<String>();
+					toController.add("");
+					toController.add(comboBox.getSelectedItem().toString());
+					toController.add(textField.getText());
+					System.out.println(toController);
 				}
 			}
-			
 		});
 	}
 }

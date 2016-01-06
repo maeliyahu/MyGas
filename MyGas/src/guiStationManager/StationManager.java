@@ -30,32 +30,25 @@ public class StationManager extends FormPanel {
 		path.setText("Login/Station Manager Window");
 		btnBack.setText("Logout");
 		
-		JButton btnInsertFuelType = new JButton("Insert fuel type");
-	
-		btnInsertFuelType.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnInsertFuelType.setBackground(new Color(255, 255, 204));
-		btnInsertFuelType.setBounds(260, 139, 245, 41);
-		add(btnInsertFuelType);
-		
 		JButton btnDeterminingTheThreshold = new JButton("Determining the threshold");
 	
 		btnDeterminingTheThreshold.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnDeterminingTheThreshold.setBackground(new Color(255, 255, 204));
-		btnDeterminingTheThreshold.setBounds(260, 190, 245, 41);
+		btnDeterminingTheThreshold.setBounds(253, 101, 245, 41);
 		add(btnDeterminingTheThreshold);
 		
 		JButton btnApproveFuelOrder = new JButton("Approve fuel order");
 		
 		btnApproveFuelOrder.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnApproveFuelOrder.setBackground(new Color(255, 255, 204));
-		btnApproveFuelOrder.setBounds(260, 244, 245, 41);
+		btnApproveFuelOrder.setBounds(253, 155, 245, 41);
 		add(btnApproveFuelOrder);
 		
 		JButton btnProduceQuarterlyReports = new JButton("Produce Quarterly Reports");
 
 		btnProduceQuarterlyReports.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnProduceQuarterlyReports.setBackground(new Color(255, 255, 204));
-		btnProduceQuarterlyReports.setBounds(260, 295, 245, 41);
+		btnProduceQuarterlyReports.setBounds(253, 206, 245, 41);
 		add(btnProduceQuarterlyReports);
 		JLabel name = new JLabel("");
 		name.setBounds(80, 38, 46, 14);
@@ -70,14 +63,7 @@ public class StationManager extends FormPanel {
 		 *  "Insert fuel stock"
 		 *  "Determining the threshold level for receiving alert"
 		 *  "Approve fuel order","Produce Quarterly Reports" */
-		btnInsertFuelType.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				InsetFuelStock insert=new InsetFuelStock(null,owner);
-				owner.setVisible(false);
-				framel.getContentPane().add(insert);
-				insert.setVisible(true);
-			}
-		});
+
 		btnDeterminingTheThreshold.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DeterminingThreshold DetermingThreshold=new DeterminingThreshold(null,owner);

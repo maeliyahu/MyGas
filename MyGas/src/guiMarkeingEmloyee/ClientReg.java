@@ -1,5 +1,5 @@
 package guiMarkeingEmloyee;
-
+import controllers.MarketingEmployeeController;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -16,12 +16,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+
 import com.toedter.calendar.JDayChooser;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 import com.toedter.components.JLocaleChooser;
 import com.toedter.components.JSpinField;
 import com.toedter.calendar.JCalendar;
+
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 public class ClientReg extends FormPanel {
@@ -44,7 +46,7 @@ public class ClientReg extends FormPanel {
 	private JLabel lblCreditCardCvv;
 	private JLabel lblAc;
 	private JButton btnDone;
-	protected ArrayList <String> login=new ArrayList();
+	protected ArrayList <String> toController;
 	private JLabel lblM;
 	private JLabel lblYear;
 	private JComboBox typeComboBox;
@@ -58,32 +60,39 @@ public class ClientReg extends FormPanel {
 	
 
 	/**
-	 * Create the panel.
+	 * this method create the Client registration panel
+	 * @param frame - the main window frame that containing the panels
+	 * @param panelback - the previous panel
 	 */
 	public ClientReg(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Client registration");
 		path.setText("Login/Marketing Employee window/Client registration");
 		
+		//id
 		textField_0 = new JTextField();
 		textField_0.setBounds(145, 91, 227, 24);
 		add(textField_0);
 		textField_0.setColumns(10);
 		
+		//name
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(145, 121, 227, 24);
 		add(textField_1);
 		
+		//password
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		textField_3.setBounds(145, 181, 227, 24);
 		add(textField_3);
 		
+		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
 		textField_5.setBounds(145, 241, 227, 24);
 		add(textField_5);
+		
 		
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
@@ -264,26 +273,9 @@ public class ClientReg extends FormPanel {
 		
 		btnDone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				login.add(textField_0.getText());
-				login.add(textField_1.getText());
-				login.add(textField_2.getText());
-				login.add(textField_3.getText());
-				login.add(textField_4.getText());
-				login.add(textField_5.getText());
-				login.add(textField_6.getText());
-				login.add(textField_7.getText());
-				login.add(textField_8.getText());
-				login.add(textField_9.getText());
-				login.add(textField_10.getText());
-				login.add(textField_11.getText());
-				login.add(textField_12.getText());
-				login.add(textField_13.getText());
-				for(int i=0;i<login.size();i++)
-					System.out.print(" " + login.get(i));
+				String valid = null;
 				
-				*/
-				
+				boolean flag=true;
 				
 				//ID number
 				String input = textField_0.getText();
@@ -292,13 +284,12 @@ public class ClientReg extends FormPanel {
 					textField_0.setForeground(Color.BLACK);
 					int inputNum = Integer.parseInt(input);
 					
-					//add if to check in DB 
-					
 				}
 				catch(NumberFormatException e1)
 				{
 					textField_0.setText("Error");
 					textField_0.setForeground(Color.RED);
+					flag=false;
 				}
 				
 			
@@ -308,13 +299,14 @@ public class ClientReg extends FormPanel {
 				try
 				{
 					textField_7.setForeground(Color.BLACK);
-					int inputNum = Integer.parseInt(input);
+					long inputNum = Long.parseLong(input);
 					
 				}
 				catch(NumberFormatException e1)
 				{
 					textField_7.setText("Error");
 					textField_7.setForeground(Color.RED);
+					flag=false;
 				}
 				
 				// cvv
@@ -323,9 +315,12 @@ public class ClientReg extends FormPanel {
 				{
 					int mount= mounthSpin.getValue();
 					int year= yearSpin.getValue();
+					valid=String.valueOf(mount);
+					valid=valid.concat("/");
+					valid=valid.concat(String.valueOf(year));
 					
 					//checking
-					System.out.println(mount+" "+year);
+					System.out.println("Valid:"+valid);
 					//send to server
 					
 					textField_9.setForeground(Color.BLACK);
@@ -338,6 +333,7 @@ public class ClientReg extends FormPanel {
 				{
 					textField_9.setText("Error");
 					textField_9.setForeground(Color.RED);
+					flag=false;
 				}
 				
 				
@@ -365,6 +361,7 @@ public class ClientReg extends FormPanel {
 				if(accessInput.equals("Exclusive") && numOfSelectedCompenis>1)
 				{
 					System.out.println("Can't choose more then 1 company");
+					flag=false;
 					
 				}
 				
@@ -372,6 +369,7 @@ public class ClientReg extends FormPanel {
 				if(accessInput.equals("Multi") && numOfSelectedCompenis>3)
 				{
 					System.out.println("Can't choose more then 3 companies");
+					flag=false;
 				}
 				//sent to server the details
 				
@@ -394,6 +392,7 @@ public class ClientReg extends FormPanel {
 					{
 						textField_6.setText("Error");
 						textField_6.setForeground(Color.RED);
+						flag=false;
 					}
 				}
 				else 
@@ -410,6 +409,7 @@ public class ClientReg extends FormPanel {
 					{
 						textField_6.setText("Error");
 						textField_6.setForeground(Color.RED);
+						flag=false;
 					}
 				}
 				textField_5.setForeground(Color.BLACK);
@@ -418,6 +418,54 @@ public class ClientReg extends FormPanel {
 				{
 					textField_5.setText("Error");
 					textField_5.setForeground(Color.RED);
+					flag=false;
+				}
+				
+				//can send to the controller
+				if (flag)
+				{
+					toController=new ArrayList<String>();
+					//method name
+					toController.add("");
+					//id
+					toController.add(textField_0.getText());
+					//name
+					toController.add(textField_1.getText());
+					//plan type
+					toController.add(planInput);
+					//password
+					toController.add(textField_3.getText());
+					//type
+					toController.add(typeInput);
+					//email
+					toController.add(email);
+					// vechile amount
+					toController.add(textField_6.getText());
+					//credit card number 
+					toController.add(textField_7.getText());
+					// credit card valid 
+					toController.add(valid);
+					//cvv
+					toController.add(textField_9.getText());
+					//access plan
+					toController.add(accessInput);
+					
+					// fuel company
+					if(chckbxNewCheckBox.isSelected())
+						toController.add(chckbxNewCheckBox.getText());
+					if(chckbxDelek.isSelected())
+						toController.add(chckbxDelek.getText());
+					if(chckbxSonol.isSelected())
+						toController.add(chckbxSonol.getText());
+					if(chckbxAlonit.isSelected())
+						toController.add(chckbxAlonit.getText());
+					
+					while(toController.size() < 15)
+						toController.add(null);
+
+					// cheking
+					System.out.print(toController);
+					MarketingEmployeeController.addClient(toController);
 				}
 				
 			}//end action

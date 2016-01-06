@@ -19,6 +19,8 @@ import javax.swing.JButton;
 
 import com.toedter.components.JSpinField;
 
+import controllers.MarketingEmployeeController;
+
 import javax.swing.JCheckBox;
 import javax.swing.JTree;
 
@@ -43,7 +45,7 @@ public class UpdatingClientDetails extends FormPanel {
 	private JLabel lblAc;
 	private JLabel lblFuelCompany;
 	private JButton btnDone;
-	protected ArrayList <String> login=new ArrayList();
+	protected ArrayList <String> toController;
 	private JSpinField mounthSpin;
 	private JSpinField yearSpin;
 	private JLabel label_1;
@@ -57,9 +59,10 @@ public class UpdatingClientDetails extends FormPanel {
 	private JComboBox chckbxPlanType;
 	
 	/**
-	 * Create the panel.
+	 * this method create the Updating Client Details panel
+	 * @param frame - the main window frame that containing the panels
+	 * @param panelback - the previous panel
 	 */
-	
 	public UpdatingClientDetails(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Updating Client Details");
@@ -277,26 +280,9 @@ public class UpdatingClientDetails extends FormPanel {
 		
 		btnDone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*
-				login.add(textField_0.getText());
-				login.add(textField_1.getText());
-				login.add(textField_2.getText());
-				login.add(textField_3.getText());
-				login.add(textField_4.getText());
-				login.add(textField_5.getText());
-				login.add(textField_6.getText());
-				login.add(textField_7.getText());
-				login.add(textField_8.getText());
-				login.add(textField_9.getText());
-				login.add(textField_10.getText());
-				login.add(textField_11.getText());
-				login.add(textField_12.getText());
-				login.add(textField_13.getText());
-				for(int i=0;i<login.size();i++)
-					System.out.print(" " + login.get(i));
-				*/
-				
-				
+				toController=new ArrayList<String>();
+				boolean flag=true;
+				String valid = null;
 				//ID number
 				String input = textField_0.getText();
 				try
@@ -311,6 +297,7 @@ public class UpdatingClientDetails extends FormPanel {
 				{
 					textField_0.setText("Error");
 					textField_0.setForeground(Color.RED);
+					flag=false;
 				}
 				
 				// Vechile amount
@@ -328,6 +315,7 @@ public class UpdatingClientDetails extends FormPanel {
 				{
 					textField_6.setText("Error");
 					textField_6.setForeground(Color.RED);
+					flag=false;
 				}
 				
 				// credit card number
@@ -335,13 +323,14 @@ public class UpdatingClientDetails extends FormPanel {
 				try
 				{
 					textField_7.setForeground(Color.BLACK);
-					int inputNum = Integer.parseInt(input);
+					long inputNum = Long.parseLong(input);
 					
 				}
 				catch(NumberFormatException e1)
 				{
 					textField_7.setText("Error");
 					textField_7.setForeground(Color.RED);
+					flag=false;
 				}
 				
 				// cvv
@@ -365,6 +354,7 @@ public class UpdatingClientDetails extends FormPanel {
 				{
 					textField_9.setText("Error");
 					textField_9.setForeground(Color.RED);
+					flag=false;
 				}
 				
 				
@@ -391,6 +381,7 @@ public class UpdatingClientDetails extends FormPanel {
 				if(accessInput.equals("Exclusive") && numOfSelectedCompenis>1)
 				{
 					System.out.println("Can't choose more then 1 company");
+					flag=false;
 					
 				}
 				
@@ -398,6 +389,7 @@ public class UpdatingClientDetails extends FormPanel {
 				if(accessInput.equals("Multi") && numOfSelectedCompenis>3)
 				{
 					System.out.println("Can't choose more then 3 companies");
+					flag=false;
 				}
 				//sent to server the details
 			
@@ -419,6 +411,7 @@ public class UpdatingClientDetails extends FormPanel {
 					{
 						textField_6.setText("Error");
 						textField_6.setForeground(Color.RED);
+						flag=false;
 					}
 				}
 				else 
@@ -435,6 +428,7 @@ public class UpdatingClientDetails extends FormPanel {
 					{
 						textField_6.setText("Error");
 						textField_6.setForeground(Color.RED);
+						flag=false;
 					}
 				}
 				
@@ -444,7 +438,60 @@ public class UpdatingClientDetails extends FormPanel {
 				{
 					textField_5.setText("Error");
 					textField_5.setForeground(Color.RED);
+					flag=false;
 				}
+				//valid card
+				int mount= mounthSpin.getValue();
+				int year= yearSpin.getValue();
+				valid=String.valueOf(mount);
+				valid=valid.concat("/");
+				valid=valid.concat(String.valueOf(year));
+				
+				if (flag)
+				{
+					toController=new ArrayList<String>();
+					//method name
+					toController.add("");
+					//id
+					toController.add(textField_0.getText());
+					//name
+					toController.add(textField_1.getText());
+					//plan type
+					toController.add(planInput);
+					//password
+					toController.add(textField_3.getText());
+					//type
+					toController.add(typeInput);
+					//email
+					toController.add(email);
+					// vechile amount
+					toController.add(textField_6.getText());
+					//credit card number 
+					toController.add(textField_7.getText());
+					// credit card valid 
+					toController.add(valid);
+					//cvv
+					toController.add(textField_9.getText());
+					//access plan
+					toController.add(accessInput);
+					
+					// fuel company
+					if(chckbxNewCheckBox.isSelected())
+						toController.add(chckbxNewCheckBox.getText());
+					if(chckbxDelek.isSelected())
+						toController.add(chckbxDelek.getText());
+					if(chckbxSonol.isSelected())
+						toController.add(chckbxSonol.getText());
+					if(chckbxAlonit.isSelected())
+						toController.add(chckbxAlonit.getText());
+					
+					while(toController.size() < 15)
+						toController.add(null);
+
+					// cheking
+					System.out.print(toController);
+					MarketingEmployeeController.updateClientDetails(toController);
+				} //end if
 			}// end action
 		});
 		

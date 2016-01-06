@@ -1,5 +1,6 @@
 package guiClient;
 import gui.*;
+
 import java.awt.Color;
 import java.awt.Font;
 
@@ -9,8 +10,13 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class OrderFuel extends FormPanel {
 
@@ -65,6 +71,7 @@ public class OrderFuel extends FormPanel {
 		done.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String input = textField.getText();
+				boolean flag=true;
 				try
 				{
 					textField.setForeground(Color.BLACK);
@@ -78,8 +85,21 @@ public class OrderFuel extends FormPanel {
 				{
 					textField.setText("Error");
 					textField.setForeground(Color.RED);
+					flag=false;
 				}
-				
+				if(flag){
+					ArrayList<String> toController=new ArrayList<String>();
+					toController.add("");
+					toController.add("userId");
+					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+					Date date=new Date();
+					String dateto=dateFormat.format(date);
+					toController.add(dateto);
+					toController.add(textField.getText());
+					toController.add(comboBox.getSelectedItem().toString());
+					System.out.println(toController);
+					//toController.add()
+				}
 			}
 		});
 	}

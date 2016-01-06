@@ -4,6 +4,7 @@ import gui.*;
 
 import java.awt.Color;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -16,21 +17,19 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+import com.toedter.components.JSpinField;
+
+import javax.swing.JCheckBox;
+import javax.swing.JTree;
+
 public class UpdatingClientDetails extends FormPanel {
 	private JTextField textField_0;
 	private JTextField textField_1;
-	private JTextField textField_2;
 	private JTextField textField_3;
-	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
-	private JTextField textField_8;
 	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
 	private JLabel label;
 	private JLabel lblName;
 	private JLabel lblPlanTypeId;
@@ -43,10 +42,20 @@ public class UpdatingClientDetails extends FormPanel {
 	private JLabel lblCreditCardCvv;
 	private JLabel lblAc;
 	private JLabel lblFuelCompany;
-	private JLabel lblFuelCompany_1;
-	private JLabel lblFuelCompany_2;
 	private JButton btnDone;
 	protected ArrayList <String> login=new ArrayList();
+	private JSpinField mounthSpin;
+	private JSpinField yearSpin;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JComboBox typeComboBox;
+	private JComboBox accessPlanComboBox;
+	private JCheckBox chckbxNewCheckBox;
+	private JCheckBox chckbxDelek;
+	private JCheckBox chckbxSonol;
+	private JCheckBox chckbxAlonit;
+	private JComboBox chckbxPlanType;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -57,179 +66,214 @@ public class UpdatingClientDetails extends FormPanel {
 		path.setText("Login/Marketing Employee window/Updating Client Details");
 		
 		textField_0 = new JTextField();
-		textField_0.setBounds(167, 91, 170, 24);
+		textField_0.setBounds(139, 91, 226, 24);
 		add(textField_0);
 		textField_0.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(167, 121, 170, 24);
+		textField_1.setBounds(139, 121, 226, 24);
 		add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(167, 151, 170, 24);
-		add(textField_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(167, 181, 170, 24);
+		textField_3.setBounds(139, 181, 226, 24);
 		add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(167, 211, 170, 24);
-		add(textField_4);
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
-		textField_5.setBounds(167, 241, 170, 24);
+		textField_5.setBounds(139, 241, 226, 24);
 		add(textField_5);
 		
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
-		textField_6.setBounds(167, 271, 170, 24);
+		textField_6.setBounds(139, 271, 226, 24);
 		add(textField_6);
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
-		textField_7.setBounds(583, 91, 170, 24);
+		textField_7.setBounds(539, 91, 217, 24);
 		add(textField_7);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(583, 121, 170, 24);
-		add(textField_8);
 		
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
-		textField_9.setBounds(583, 151, 170, 24);
+		textField_9.setBounds(539, 151, 217, 24);
 		add(textField_9);
-		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(583, 181, 170, 24);
-		add(textField_10);
-		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(583, 211, 170, 24);
-		add(textField_11);
-		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(583, 241, 170, 24);
-		add(textField_12);
-		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(583, 271, 170, 24);
-		add(textField_13);
 		
 		label = new JLabel("Id number:");
 		label.setForeground(new Color(255, 255, 204));
 		label.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label.setBackground(new Color(255, 255, 204));
-		label.setBounds(51, 92, 84, 20);
+		label.setBounds(23, 92, 84, 20);
 		add(label);
 		
 		lblName = new JLabel("Name:");
 		lblName.setForeground(new Color(255, 255, 204));
 		lblName.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblName.setBackground(new Color(255, 255, 204));
-		lblName.setBounds(51, 122, 84, 20);
+		lblName.setBounds(23, 122, 84, 20);
 		add(lblName);
 		
-		lblPlanTypeId = new JLabel("Plan Type ID:");
+		lblPlanTypeId = new JLabel("Plan Type:");
 		lblPlanTypeId.setForeground(new Color(255, 255, 204));
 		lblPlanTypeId.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblPlanTypeId.setBackground(new Color(255, 255, 204));
-		lblPlanTypeId.setBounds(51, 152, 106, 24);
+		lblPlanTypeId.setBounds(23, 152, 106, 24);
 		add(lblPlanTypeId);
 		
 		lblPassword = new JLabel("Password:");
 		lblPassword.setForeground(new Color(255, 255, 204));
 		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblPassword.setBackground(new Color(255, 255, 204));
-		lblPassword.setBounds(51, 182, 84, 20);
+		lblPassword.setBounds(23, 182, 84, 20);
 		add(lblPassword);
 		
 		lblType = new JLabel("type:");
 		lblType.setForeground(new Color(255, 255, 204));
 		lblType.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblType.setBackground(new Color(255, 255, 204));
-		lblType.setBounds(51, 212, 84, 20);
+		lblType.setBounds(23, 212, 84, 20);
 		add(lblType);
+		
+		typeComboBox = new JComboBox();
+		typeComboBox.setBackground(new Color(255, 255, 204));
+		typeComboBox.setBounds(139, 212, 226, 23);
+		typeComboBox.addItem("Private Client");
+		typeComboBox.addItem("Company Client");
+		add(typeComboBox);
+		
 		
 		lblEmail = new JLabel("Email:");
 		lblEmail.setForeground(new Color(255, 255, 204));
 		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblEmail.setBackground(new Color(255, 255, 204));
-		lblEmail.setBounds(51, 242, 84, 20);
+		lblEmail.setBounds(23, 242, 84, 20);
 		add(lblEmail);
 		
 		lblVechileAmount = new JLabel("Vechile Amount:");
 		lblVechileAmount.setForeground(new Color(255, 255, 204));
 		lblVechileAmount.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblVechileAmount.setBackground(new Color(255, 255, 204));
-		lblVechileAmount.setBounds(51, 271, 106, 24);
+		lblVechileAmount.setBounds(23, 271, 106, 24);
 		add(lblVechileAmount);
 		
 		lblCreditCardNumber = new JLabel("Credit Card Number:");
 		lblCreditCardNumber.setForeground(new Color(255, 255, 204));
 		lblCreditCardNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCreditCardNumber.setBackground(new Color(255, 255, 204));
-		lblCreditCardNumber.setBounds(442, 91, 131, 24);
+		lblCreditCardNumber.setBounds(398, 91, 131, 24);
 		add(lblCreditCardNumber);
 		
 		lblCreditCardValid = new JLabel("Credit Card Valid:");
 		lblCreditCardValid.setForeground(new Color(255, 255, 204));
 		lblCreditCardValid.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCreditCardValid.setBackground(new Color(255, 255, 204));
-		lblCreditCardValid.setBounds(442, 122, 131, 24);
+		lblCreditCardValid.setBounds(398, 122, 131, 24);
 		add(lblCreditCardValid);
 		
 		lblCreditCardCvv = new JLabel("Credit card cvv:");
 		lblCreditCardCvv.setForeground(new Color(255, 255, 204));
 		lblCreditCardCvv.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCreditCardCvv.setBackground(new Color(255, 255, 204));
-		lblCreditCardCvv.setBounds(442, 152, 131, 20);
+		lblCreditCardCvv.setBounds(398, 152, 131, 20);
 		add(lblCreditCardCvv);
 		
 		lblAc = new JLabel("Access plan:");
 		lblAc.setForeground(new Color(255, 255, 204));
 		lblAc.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblAc.setBackground(new Color(255, 255, 204));
-		lblAc.setBounds(442, 182, 84, 20);
+		lblAc.setBounds(398, 182, 84, 20);
 		add(lblAc);
 		
-		lblFuelCompany = new JLabel("Fuel company 1 :");
+		lblFuelCompany = new JLabel("Fuel companies :");
 		lblFuelCompany.setForeground(new Color(255, 255, 204));
 		lblFuelCompany.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblFuelCompany.setBackground(new Color(255, 255, 204));
-		lblFuelCompany.setBounds(442, 212, 131, 24);
+		lblFuelCompany.setBounds(398, 212, 131, 24);
 		add(lblFuelCompany);
-		
-		lblFuelCompany_1 = new JLabel("Fuel company 2 :");
-		lblFuelCompany_1.setForeground(new Color(255, 255, 204));
-		lblFuelCompany_1.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblFuelCompany_1.setBackground(new Color(255, 255, 204));
-		lblFuelCompany_1.setBounds(442, 242, 117, 24);
-		add(lblFuelCompany_1);
-		
-		lblFuelCompany_2 = new JLabel("Fuel company 3 :");
-		lblFuelCompany_2.setForeground(new Color(255, 255, 204));
-		lblFuelCompany_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblFuelCompany_2.setBackground(new Color(255, 255, 204));
-		lblFuelCompany_2.setBounds(442, 272, 117, 23);
-		add(lblFuelCompany_2);
 		
 		btnDone = new JButton("Done");
 
 		btnDone.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnDone.setBackground(new Color(255, 255, 204));
-		btnDone.setBounds(51, 320, 702, 41);
+		btnDone.setBounds(23, 319, 730, 41);
 		add(btnDone);
+		
+		
+		
+		mounthSpin = new JSpinField();
+		mounthSpin.setBackground(new Color(255, 255, 204));
+		mounthSpin.setMinimum(1);
+		mounthSpin.setMaximum(12);
+		mounthSpin.setBounds(603, 121, 43, 22);
+		//mounthSpin.setValue(5); //we need to change it to the date from DB
+		add(mounthSpin);
+		
+		yearSpin = new JSpinField();
+		yearSpin.setBackground(new Color(255, 255, 204));
+		yearSpin.setMinimum(16);
+		yearSpin.setMaximum(26);
+		yearSpin.setBounds(713, 121, 43, 22);
+		//yearSpin.setValue(5); //we need to change it to the date from DB
+		add(yearSpin);
+		
+		label_1 = new JLabel("Month:");
+		label_1.setForeground(new Color(255, 255, 204));
+		label_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label_1.setBackground(new Color(255, 255, 204));
+		label_1.setBounds(539, 122, 60, 20);
+		add(label_1);
+		
+		label_2 = new JLabel("Year:");
+		label_2.setForeground(new Color(255, 255, 204));
+		label_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label_2.setBackground(new Color(255, 255, 204));
+		label_2.setBounds(658, 122, 43, 20);
+		add(label_2);
+		
+		accessPlanComboBox = new JComboBox();
+		accessPlanComboBox.setBackground(new Color(255, 255, 204));
+		accessPlanComboBox.setBounds(539, 182, 214, 23);
+		accessPlanComboBox.addItem("Exclusive");
+		accessPlanComboBox.addItem("Multi");
+		//accessPlanComboBox.setSelectedItem("Multi");; //we need to change it to the date from DB
+
+		add(accessPlanComboBox);
+		
+		chckbxNewCheckBox = new JCheckBox("Paz");
+		chckbxNewCheckBox.setBackground(new Color(255, 255, 204));
+		chckbxNewCheckBox.setBounds(539, 229, 89, 24);
+		//chckbxNewCheckBox.setSelected(true); need to add from DB
+		add(chckbxNewCheckBox);
+		
+		chckbxDelek = new JCheckBox("Delek");
+		chckbxDelek.setBackground(new Color(255, 255, 204));
+		chckbxDelek.setBounds(655, 229, 98, 25);
+		//setSelected(true); need to add from DB
+		add(chckbxDelek);
+		
+		chckbxSonol = new JCheckBox("Sonol");
+		chckbxSonol.setBackground(new Color(255, 255, 204));
+		chckbxSonol.setBounds(539, 270, 89, 25);
+		//setSelected(true); need to add from DB
+		add(chckbxSonol);
+		
+		chckbxAlonit = new JCheckBox("Alonit");
+		chckbxAlonit.setBackground(new Color(255, 255, 204));
+		chckbxAlonit.setBounds(655, 270, 98, 25);
+		// setSelected(true); need to add from DB
+		add(chckbxAlonit);
+		
+		chckbxPlanType = new JComboBox();
+		chckbxPlanType.setBackground(new Color(255, 255, 204));
+		chckbxPlanType.setBounds(138, 151, 227, 23);
+		chckbxPlanType.addItem("Occasionally fueling");
+		chckbxPlanType.addItem("Mounthly subscription 1 vehicle");
+		chckbxPlanType.addItem("Mounthly subscription several vehicles");
+		chckbxPlanType.addItem("Full mounthly subscription");
+		//chckbxPlanType.setSelectedItem("Full mounthly subscription"); //get from DB 
+		add(chckbxPlanType);
+		
 		
 		btnDone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -304,6 +348,13 @@ public class UpdatingClientDetails extends FormPanel {
 				input = textField_9.getText();
 				try
 				{
+					int mount= mounthSpin.getValue();
+					int year= yearSpin.getValue();
+					
+					//checking
+					System.out.println(mount+" "+year);
+					
+					
 					textField_9.setForeground(Color.BLACK);
 					int inputNum = Integer.parseInt(input);
 					if(input.length() != 3 || inputNum<0 )
@@ -316,7 +367,85 @@ public class UpdatingClientDetails extends FormPanel {
 					textField_9.setForeground(Color.RED);
 				}
 				
-			}
+				
+				//Client type
+				String typeInput = typeComboBox.getSelectedItem().toString();
+				System.out.println(typeInput);
+				
+				//Access plan 
+				String accessInput = accessPlanComboBox.getSelectedItem().toString();
+				System.out.println(accessInput);
+				
+				
+				int numOfSelectedCompenis=0;
+				if(chckbxNewCheckBox.isSelected())
+					numOfSelectedCompenis++;
+				if(chckbxDelek.isSelected())
+					numOfSelectedCompenis++;
+				if(chckbxSonol.isSelected())
+					numOfSelectedCompenis++;
+				if(chckbxAlonit.isSelected())
+					numOfSelectedCompenis++;
+				
+				// Exclusive can choose only 1 company
+				if(accessInput.equals("Exclusive") && numOfSelectedCompenis>1)
+				{
+					System.out.println("Can't choose more then 1 company");
+					
+				}
+				
+				// Multi can choose up to 3 companies
+				if(accessInput.equals("Multi") && numOfSelectedCompenis>3)
+				{
+					System.out.println("Can't choose more then 3 companies");
+				}
+				//sent to server the details
+			
+				// Vechile amount
+				input = textField_6.getText();
+				String planInput = chckbxPlanType.getSelectedItem().toString();
+				if(planInput.equals("Mounthly subscription several vehicles"))
+				{
+					
+					try
+					{
+						textField_6.setForeground(Color.BLACK);
+						int inputNum = Integer.parseInt(input);
+						if( inputNum<1 )
+							throw new NumberFormatException();
+
+					}
+					catch(NumberFormatException e1)
+					{
+						textField_6.setText("Error");
+						textField_6.setForeground(Color.RED);
+					}
+				}
+				else 
+				{
+					try
+					{
+						textField_6.setForeground(Color.BLACK);
+						int inputNum = Integer.parseInt(input);
+						if( inputNum!=1 )
+							throw new NumberFormatException();
+
+					}
+					catch(NumberFormatException e1)
+					{
+						textField_6.setText("Error");
+						textField_6.setForeground(Color.RED);
+					}
+				}
+				
+				textField_5.setForeground(Color.BLACK);
+				String email=textField_5.getText();
+				if( !email.contains("@"))
+				{
+					textField_5.setText("Error");
+					textField_5.setForeground(Color.RED);
+				}
+			}// end action
 		});
 		
 		
@@ -324,5 +453,4 @@ public class UpdatingClientDetails extends FormPanel {
 
 
 	}
-
 }

@@ -147,12 +147,11 @@ public class SendResponse extends FormPanel{
 		add(lblTheRespons);
 		lblTheRespons.setVisible(false);
 		
-		
-		
+	
 		btnApproveChoosenRequest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//System.out.println("approve");
+				System.out.println("approve");
 				int chosenRow =table.getSelectedRow();
 				//System.out.println(chosenRow);
 				int reqNum = (int) table.getValueAt(chosenRow, 0);

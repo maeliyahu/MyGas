@@ -3,7 +3,7 @@ package controllers;
 import java.util.ArrayList;
 
 public class MarketingEmployeeController {
-	
+	static private Long campaginID=(long) 0;
 	
 	
 	/**
@@ -34,6 +34,18 @@ public class MarketingEmployeeController {
 		ArrayList<String> resultset = new ArrayList<String>();
 		//method name
 		resultset.add(0, "calcRating");
+		//sent to client
+	}
+	/**
+	 * this method send request to define a campaign pattern and save the customer rating in DB
+	 * @param resultset - the campaign pattern details id, etc...
+	 */
+	static public void defineCampaginPattern(ArrayList<String> resultset)
+	{
+		campaginID++;
+		//method name
+		resultset.add(0, "insertCampingPattenToDB");
+		resultset.add(1, campaginID.toString());
 		//sent to client
 	}
 	

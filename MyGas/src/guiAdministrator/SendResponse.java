@@ -128,14 +128,14 @@ public class SendResponse extends FormPanel{
 		
 		btnApproveChoosenRequest = new JButton("Approve chosen request");
 	
-		btnApproveChoosenRequest.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnApproveChoosenRequest.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnApproveChoosenRequest.setBackground(new Color(255, 255, 204));
 		btnApproveChoosenRequest.setBounds(157, 339, 240, 40);
 		add(btnApproveChoosenRequest);
 		
 		btnRejectChoosenRequest = new JButton("Reject chosen request");
 		
-		btnRejectChoosenRequest.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnRejectChoosenRequest.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnRejectChoosenRequest.setBackground(new Color(255, 255, 204));
 		btnRejectChoosenRequest.setBounds(485, 339, 240, 40);
 		add(btnRejectChoosenRequest);
@@ -151,40 +151,45 @@ public class SendResponse extends FormPanel{
 		btnApproveChoosenRequest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				System.out.println("approve");
+				//System.out.println("approve");
 				int chosenRow =table.getSelectedRow();
-				//System.out.println(chosenRow);
-				int reqNum = (int) table.getValueAt(chosenRow, 0);
-				//System.out.println(reqNum);
-				ArrayList<String> toController= new ArrayList<String>();
-				toController.add(0,""); //for method name
-				toController.add(1, String.valueOf(reqNum)); // request number
-				toController.add(2, "true"); // request number
-				AdministratorController.SendRequestRespond(toController);
-				((DefaultTableModel)table.getModel()).removeRow(chosenRow);
-				lblTheRespons.setVisible(true);
+				if(chosenRow != -1)
+				{
+					//System.out.println(chosenRow);
+					int reqNum = (int) table.getValueAt(chosenRow, 0);
+					System.out.println(reqNum);
+					ArrayList<String> toController= new ArrayList<String>();
+					//toController.add(0,""); //for method name
+					toController.add(String.valueOf(reqNum)); // request number
+					toController.add("true"); // request number
+					AdministratorController.SendRequestRespond(toController);
+					((DefaultTableModel)table.getModel()).removeRow(chosenRow);
+					lblTheRespons.setVisible(true);
+				}
 				
 			} // end approve action
 		});
 		
 		btnRejectChoosenRequest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				//System.out.println("reject");
 				int chosenRow =table.getSelectedRow();
-				//System.out.println(chosenRow);
-				int reqNum = (int) table.getValueAt(chosenRow, 0);
-				//System.out.println(reqNum);
-				ArrayList<String> toController= new ArrayList<String>();
-				toController.add(0,""); //for method name
-				toController.add(1, String.valueOf(reqNum)); // request number
-				toController.add(2, "false"); // request number
-				AdministratorController.SendRequestRespond(toController);
-				((DefaultTableModel)table.getModel()).removeRow(chosenRow);
-				lblTheRespons.setVisible(true);
+				if(chosenRow != -1)
+				{
+					//System.out.println(chosenRow);
+					int reqNum = (int) table.getValueAt(chosenRow, 0);
+					//System.out.println(reqNum);
+					ArrayList<String> toController= new ArrayList<String>();
+					//toController.add(0,""); //for method name
+					toController.add(String.valueOf(reqNum)); // request number
+					toController.add("false"); // respond
+					AdministratorController.SendRequestRespond(toController);
+					((DefaultTableModel)table.getModel()).removeRow(chosenRow);
+					lblTheRespons.setVisible(true);
+				}
 				
 			} //and reject action
 		}); 
 
-	}// end constractor
+	}// end constructor
 }

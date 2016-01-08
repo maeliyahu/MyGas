@@ -34,42 +34,35 @@ public class MarketingMng extends FormPanel {
 
 		btnPlanesPriceChange.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnPlanesPriceChange.setBackground(new Color(255, 255, 204));
-		btnPlanesPriceChange.setBounds(225, 145, 291, 41);
+		btnPlanesPriceChange.setBounds(223, 111, 291, 41);
 		add(btnPlanesPriceChange);
-		
-		JButton btnUpdateMaximumFuel = new JButton("Update Maximum Fuel Price");
-
-		btnUpdateMaximumFuel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnUpdateMaximumFuel.setBackground(new Color(255, 255, 204));
-		btnUpdateMaximumFuel.setBounds(225, 94, 291, 41);
-		add(btnUpdateMaximumFuel);
 		
 		JButton btnActivateCampaignPattern = new JButton("Activate Campaign Pattern");
 
 		btnActivateCampaignPattern.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnActivateCampaignPattern.setBackground(new Color(255, 255, 204));
-		btnActivateCampaignPattern.setBounds(225, 249, 291, 41);
+		btnActivateCampaignPattern.setBounds(223, 215, 291, 41);
 		add(btnActivateCampaignPattern);
 		
 		JButton btnUpdatePlanesPrice = new JButton("Update Planes Price");
 
 		btnUpdatePlanesPrice.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnUpdatePlanesPrice.setBackground(new Color(255, 255, 204));
-		btnUpdatePlanesPrice.setBounds(225, 197, 291, 41);
+		btnUpdatePlanesPrice.setBounds(223, 163, 291, 41);
 		add(btnUpdatePlanesPrice);
 		
 		JButton btnCharacterizationReport = new JButton("Characterization Report");
 
 		btnCharacterizationReport.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnCharacterizationReport.setBackground(new Color(255, 255, 204));
-		btnCharacterizationReport.setBounds(225, 352, 291, 41);
+		btnCharacterizationReport.setBounds(223, 318, 291, 41);
 		add(btnCharacterizationReport);
 		
 		JButton btnRespondReportOf = new JButton("Respond Report Of Marketing Campaign");
 
 		btnRespondReportOf.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRespondReportOf.setBackground(new Color(255, 255, 204));
-		btnRespondReportOf.setBounds(225, 301, 291, 40);
+		btnRespondReportOf.setBounds(223, 267, 291, 40);
 		add(btnRespondReportOf);
 		
 		JLabel name = new JLabel("");
@@ -81,23 +74,6 @@ public class MarketingMng extends FormPanel {
 		clientIcon.setIcon(new ImageIcon(clientPic));
 		clientIcon.setBounds(662, 372, 128, 128);
 		add(clientIcon);
-		
-		
-   /*"Choose an Option"
-    *  "Update maximum fuel price"
-    *  "Planes Price change request" 
-    *  "Update planes price"
-    *   "Activate campaign pattern"
-    *   "Produce a respond report of marketing campaign"
-    *   "Produce a period customer characterization report"*/
-		btnUpdateMaximumFuel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				UpdateMaximumFuelPrice update=new UpdateMaximumFuelPrice(null,owner);
-				owner.setVisible(false);
-				framel.getContentPane().add(update);
-				update.setVisible(true);
-			}
-		});
 		btnPlanesPriceChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PlanesPriceChangeRequest request=new PlanesPriceChangeRequest(null,owner);

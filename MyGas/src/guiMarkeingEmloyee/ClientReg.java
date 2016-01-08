@@ -426,7 +426,7 @@ public class ClientReg extends FormPanel {
 				{
 					toController=new ArrayList<String>();
 					//method name
-					toController.add("");
+					//toController.add("");
 					//id
 					toController.add(textField_0.getText());
 					//name
@@ -460,12 +460,12 @@ public class ClientReg extends FormPanel {
 					if(chckbxAlonit.isSelected())
 						toController.add(chckbxAlonit.getText());
 					
-					while(toController.size() < 15)
+					while(toController.size() < 14)
 						toController.add(null);
 
 					// cheking
-					System.out.print(toController);
-					MarketingEmployeeController.addClient(toController);
+					//System.out.print(toController);
+					MarketingEmployeeController.addClient(toController, owner);
 				}
 				
 			}//end action

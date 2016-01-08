@@ -58,6 +58,8 @@ public class CampaignPatternDefining extends FormPanel {
 	private JLabel labelEndYear;
 	private JTable table_1;
 	private JLabel lblRatings;
+	private JLabel label;
+	private JLabel label_1;
 	/**
 	 * Create the panel.
 	 */
@@ -217,6 +219,20 @@ public class CampaignPatternDefining extends FormPanel {
 		lblRatings.setBackground(new Color(255, 255, 204));
 		lblRatings.setBounds(354, 75, 102, 20);
 		add(lblRatings);
+		
+		label = new JLabel(":00");
+		label.setForeground(new Color(255, 255, 204));
+		label.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label.setBackground(new Color(255, 255, 204));
+		label.setBounds(580, 284, 102, 20);
+		add(label);
+		
+		label_1 = new JLabel(":00");
+		label_1.setForeground(new Color(255, 255, 204));
+		label_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		label_1.setBackground(new Color(255, 255, 204));
+		label_1.setBounds(580, 345, 102, 20);
+		add(label_1);
 		lblIllegalChoose.setVisible(false);
 		
 		
@@ -276,12 +292,14 @@ public class CampaignPatternDefining extends FormPanel {
 				if(flag)
 				{
 					ArrayList<String> toController= new ArrayList<String>();
-					toController.add(0,""); // for the method name
-					toController.add(1, ""); //for the Campaign ID
+					//toController.add(0,""); // for the method name
+					//toController.add(1, ""); //for the Campaign ID
 					toController.add(startDate.toString());
 					toController.add(endDate.toString());
-					toController.add(spinStartHour.toString());
-					toController.add(spinStartYear.toString());
+					toController.add(String.valueOf(spinStartHour.getValue()));
+					toController.add(String.valueOf(spinStartYear.getValue()));
+					toController.add(String.valueOf(spinEndHour.getValue()));
+					toController.add(String.valueOf(spinEndYear.getValue()));
 					MarketingEmployeeController.defineCampaginPattern(toController);
 				}
 					

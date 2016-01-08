@@ -4,13 +4,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class FormPanel extends JPanel {
+public class FormPanel extends JPanel  {
 	public JPanel owner;
 	protected JPanel panelback;
 	protected JFrame framel;
@@ -65,5 +66,11 @@ public class FormPanel extends JPanel {
 	 */
 	public void backpanel(){
 		this.panelback.setVisible(true);
+	}
+	/**
+	 * this method for the inherit classes
+	 * @param resultset
+	 */
+	public void displayAnswer(ArrayList<String> resultset) {
 	}
 }

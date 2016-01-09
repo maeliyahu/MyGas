@@ -155,7 +155,7 @@ public class ActivateCampaignPattern extends FormPanel {
 					//toController.add(0,""); //for method name
 					toController.add(String.valueOf(reqNum)); // campaign number
 
-					MarketingMngController.activateCampingPatten(toController);
+					MarketingMngController.activateCampingPatten(toController, owner);
 					((DefaultTableModel)table.getModel()).removeRow(chosenRow);
 					lblTheUpdate.setVisible(true);
 

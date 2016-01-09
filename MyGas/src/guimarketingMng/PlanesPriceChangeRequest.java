@@ -94,7 +94,7 @@ public class PlanesPriceChangeRequest extends FormPanel {
 					 ArrayList<String> toController = new ArrayList<String>();
 					 toController.add(plan);
 					 toController.add(discount);
-					 MarketingMngController.planPriceChangeRequest(toController);
+					 MarketingMngController.planPriceChangeRequest(toController, owner);
 					 lblTheRequestSent.setVisible(true);
 					 
 				 }

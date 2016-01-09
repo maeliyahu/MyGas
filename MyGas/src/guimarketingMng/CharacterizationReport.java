@@ -110,7 +110,7 @@ public class CharacterizationReport extends FormPanel {
 			toController.add(type);
 			toController.add(year);
 			toController.add(quertur);
-			MarketingMngController.createCharacterizationReport(toController);
+			MarketingMngController.createCharacterizationReport(toController, owner);
 			lblTheReportProduced.setVisible(true);
 			}
 		});

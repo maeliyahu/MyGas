@@ -162,7 +162,7 @@ public class SendResponse extends FormPanel{
 					//toController.add(0,""); //for method name
 					toController.add(String.valueOf(reqNum)); // request number
 					toController.add("true"); // request number
-					AdministratorController.SendRequestRespond(toController);
+					AdministratorController.SendRequestRespond(toController, owner);
 					((DefaultTableModel)table.getModel()).removeRow(chosenRow);
 					lblTheRespons.setVisible(true);
 				}
@@ -183,7 +183,7 @@ public class SendResponse extends FormPanel{
 					//toController.add(0,""); //for method name
 					toController.add(String.valueOf(reqNum)); // request number
 					toController.add("false"); // respond
-					AdministratorController.SendRequestRespond(toController);
+					AdministratorController.SendRequestRespond(toController, owner);
 					((DefaultTableModel)table.getModel()).removeRow(chosenRow);
 					lblTheRespons.setVisible(true);
 				}

@@ -12,14 +12,22 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import controllers.NFCController;
+
 public class NFC extends FormPanel {
 	private JTextField textField;
 	private JTextField textField_1;
+	private JLabel lblPleaseWaitUntil;
+	private JLabel lblNfcNumber;
+	private JLabel lblUantity;
+	private Image nfc;
+	private JLabel lblYouCanReturn;
 	/**
 	 * Create the panel.
 	 */
@@ -47,14 +55,14 @@ public class NFC extends FormPanel {
 		textField_1.setBounds(147, 139, 267, 26);
 		add(textField_1);
 		
-		JLabel lblNfcNumber = new JLabel("NFC Number:");
+		lblNfcNumber = new JLabel("NFC Number:");
 		lblNfcNumber.setForeground(new Color(255, 255, 204));
 		lblNfcNumber.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNfcNumber.setBackground(new Color(255, 255, 204));
 		lblNfcNumber.setBounds(33, 109, 104, 23);
 		add(lblNfcNumber);
 		
-		JLabel lblUantity = new JLabel("Fuel Quantity:");
+		lblUantity = new JLabel("Fuel Quantity:");
 		lblUantity.setForeground(new Color(255, 255, 204));
 		lblUantity.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblUantity.setBackground(new Color(255, 255, 204));
@@ -62,12 +70,27 @@ public class NFC extends FormPanel {
 		add(lblUantity);
 		
 		
-		Image nfc=new ImageIcon(this.getClass().getResource("/nfc.png")).getImage();
+		nfc=new ImageIcon(this.getClass().getResource("/nfc.png")).getImage();
 		JLabel label = new JLabel();
 		label.setIcon(new ImageIcon(nfc));
 		label.setBounds(264, 0, 40, 50);
 		add(label);
-		setVisible(false);
+		
+		lblPleaseWaitUntil = new JLabel("Please wait until finish fueling...");
+		lblPleaseWaitUntil.setForeground(new Color(255, 255, 204));
+		lblPleaseWaitUntil.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblPleaseWaitUntil.setBackground(new Color(255, 255, 204));
+		lblPleaseWaitUntil.setBounds(287, 280, 295, 25);
+		add(lblPleaseWaitUntil);
+		lblPleaseWaitUntil.setVisible(false);
+		
+		lblYouCanReturn = new JLabel("You can return the pump now");
+		lblYouCanReturn.setForeground(new Color(255, 255, 204));
+		lblYouCanReturn.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblYouCanReturn.setBackground(new Color(255, 255, 204));
+		lblYouCanReturn.setBounds(287, 318, 295, 25);
+		add(lblYouCanReturn);
+		lblYouCanReturn.setVisible(false);
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -77,8 +100,7 @@ public class NFC extends FormPanel {
 				{
 					textField.setForeground(Color.BLACK);
 					int inputNum = Integer.parseInt(input);
-					
-					//add if to check in DB 
+			
 					
 				}
 				catch(NumberFormatException e1)
@@ -86,7 +108,7 @@ public class NFC extends FormPanel {
 					textField.setText("Error");
 					textField.setForeground(Color.RED);
 				}
-				input = textField_1.getText();
+				String input2 = textField_1.getText();
 				try
 				{
 					textField_1.setForeground(Color.BLACK);
@@ -94,7 +116,14 @@ public class NFC extends FormPanel {
 					if( inputNum <=0)
 						throw new NumberFormatException();
 					//add if to check in DB 
-					
+					ArrayList<String> toController=new ArrayList<String>();
+					toController.add(input);
+					toController.add(input2);
+					lblPleaseWaitUntil.setVisible(true);
+					//add if to check in DB 
+					NFCController.fuelingFromNFC(toController, owner);
+					//lblPleaseWaitUntil.setVisible(false);
+					//lblYouCanReturn.setVisible(true);
 				}
 				catch(NumberFormatException e1)
 				{

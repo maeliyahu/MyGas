@@ -489,8 +489,9 @@ public class UpdatingClientDetails extends FormPanel {
 						toController.add(null);
 
 					// cheking
-					System.out.print(toController);
-					MarketingEmployeeController.updateClientDetails(toController);
+					//System.out.print(toController);
+					MarketingEmployeeController.updateClientDetails(toController, owner);
+					
 				} //end if
 			}// end action
 		});

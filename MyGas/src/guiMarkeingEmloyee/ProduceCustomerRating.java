@@ -35,7 +35,7 @@ public class ProduceCustomerRating extends FormPanel {
 		
 		btnProduceCustomerData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MarketingEmployeeController.produceCustomerRatingInDB();
+				MarketingEmployeeController.produceCustomerRatingInDB(owner);
 			}
 		});
 	}

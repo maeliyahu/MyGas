@@ -14,6 +14,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+import controllers.StationMngController;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -54,9 +56,8 @@ public class ProduceQuarterlyReports extends FormPanel {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ArrayList<String> toController=new ArrayList<String>();
-				toController.add("");
 				toController.add(comboBox.getSelectedItem() + "" +comboBox_1.getSelectedItem());
-				System.out.println(toController);
+				StationMngController.ProduceQuarterlyReports(toController, owner);
 			}
 		});
 	

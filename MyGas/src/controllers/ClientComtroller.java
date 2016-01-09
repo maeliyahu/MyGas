@@ -27,7 +27,7 @@ public class ClientComtroller extends FormController  {
 	 */
 	static public void OrderFuel(ArrayList<String> resultset ,JPanel dis){
 		set(dis);
-		resultset.add(0, "name of mathod");
+		resultset.add(0, "addHomeSaleToDB");
 		System.out.println(resultset);		
 		/*Test only*/
 		ArrayList<String> toClient=new ArrayList<String>();
@@ -36,7 +36,11 @@ public class ClientComtroller extends FormController  {
 		/*Test only*/
 
 	}
-
+	static public void RequestOrders(ArrayList<String> resultset ,JPanel dis){
+		set(dis);
+		resultset.add(0, "clientOrders");
+		System.out.println(resultset);		
+	}
 	
 
 }

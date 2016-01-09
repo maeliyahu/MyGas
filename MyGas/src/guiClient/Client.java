@@ -1,5 +1,6 @@
 package guiClient;
 import gui.*;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -26,9 +27,12 @@ import javax.swing.JToggleButton;
 import javax.swing.JDesktopPane;
 
 import java.awt.FlowLayout;
+import java.util.ArrayList;
 
 import javax.swing.JList;
 import javax.swing.ImageIcon;
+
+import controllers.ClientComtroller;
 
 public class Client extends FormPanel {
 
@@ -41,7 +45,6 @@ public class Client extends FormPanel {
 		title.setText("Client Window");
 		path.setText("Login/Client window");
 		btnBack.setText("Logout");
-		
 		
 
 		

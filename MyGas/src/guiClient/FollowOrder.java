@@ -11,9 +11,12 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+
+import controllers.ClientComtroller;
 
 public class FollowOrder extends FormPanel {
 
@@ -22,7 +25,7 @@ public class FollowOrder extends FormPanel {
 		title.setText("Follow Order Window");
 		path.setText("Login/Client Window/Follow Order");
 
-
+		ClientComtroller.RequestOrders(new ArrayList<String>(), owner);
 		String[] fuelType={"gasoline","motor","diesel","home"};
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBackground(new Color(255, 255, 204));

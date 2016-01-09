@@ -89,11 +89,18 @@ public class OrderFuel extends FormPanel {
 				}
 				if(flag){
 					ArrayList<String> toController=new ArrayList<String>();
+					toController.add("home");
 					toController.add("userId");
-					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+					/*date*/
+					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 					Date date=new Date();
 					String dateto=dateFormat.format(date);
 					toController.add(dateto);
+					/*time*/
+					dateFormat = new SimpleDateFormat("HH:mm");
+					dateto=dateFormat.format(date);
+					toController.add(dateto);
+					
 					toController.add(textField.getText());
 					toController.add(comboBox.getSelectedItem().toString());
 					System.out.println(toController);

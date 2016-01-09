@@ -17,8 +17,12 @@ import javax.swing.JScrollBar;
 import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+
+import controllers.StationMngController;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 public class ApproveFuelOrder extends FormPanel {
 	private JTable table;
@@ -30,21 +34,23 @@ public class ApproveFuelOrder extends FormPanel {
 		super(frame,panelback);
 		title.setText("Approve Fuel Order");
 		path.setText("Login/Station Manager Window/Approve Fuel Order");
-		String[] columnNames = {"First Name",
+		
+		StationMngController.RequestOrders(new ArrayList<String>(), owner);
+		String[] columnNames = {"id",
                 "Last Name",
                 "Sport",
                 "# of Years",
                 "Vegetarian"};
 		Object[][] data = {
-			    {"Kathy", "Smith",
+			    {"123", "Smith",
 			     "Snowboarding", new Integer(5), new Boolean(false)},
-			    {"John", "Doe",
+			    {"158", "Doe",
 			     "Rowing", new Integer(3), new Boolean(true)},
-			    {"Sue", "Black",
+			    {"1911", "Black",
 			     "Knitting", new Integer(2), new Boolean(false)},
-			    {"Jane", "White",
+			    {"19187", "White",
 			     "Speed reading", new Integer(20), new Boolean(true)},
-			    {"Joe", "Brown",
+			    {"11818", "Brown",
 			     "Pool", new Integer(10), new Boolean(false)}
 			};
 		

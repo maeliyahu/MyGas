@@ -26,8 +26,8 @@ public class MarketingMng extends FormPanel {
 	 */
 	public MarketingMng(JFrame frame,JPanel panelback ) {
 		super(frame,panelback);
-		title.setText("Marketing Manager Window");
-		path.setText("Login/Marketing Manager Window");
+		title.setText("Marketing Manager");
+		path.setText("Login/Marketing Manager");
 		btnBack.setText("Logout");
 		
 		JButton btnPlanesPriceChange = new JButton("Planes Price Change Request");

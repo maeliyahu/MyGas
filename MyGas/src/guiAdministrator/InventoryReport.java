@@ -85,7 +85,7 @@ public class InventoryReport extends FormPanel {
 				toController.add(String.valueOf(year));
 				toController.add(String.valueOf(quarter));
 
-				AdministratorController.SendRequestInventoryReport(toController);
+				AdministratorController.SendRequestInventoryReport(toController, owner);
 				//get from DB the report
 				table.setVisible(true);
 			}

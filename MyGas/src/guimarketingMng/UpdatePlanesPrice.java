@@ -171,7 +171,7 @@ public class UpdatePlanesPrice extends FormPanel {
 					//toController.add(0,""); //for method name
 					toController.add(String.valueOf(reqNum)); // request number
 					//toController.add("true"); // 
-					MarketingMngController.planPriceChangeRequest(toController);
+					MarketingMngController.planPriceChangeRequest(toController, owner);
 					table.setValueAt("true", chosenRow,5);
 					lblTheUpdate.setVisible(true);
 					}

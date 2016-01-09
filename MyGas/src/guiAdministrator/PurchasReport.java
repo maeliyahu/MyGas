@@ -85,7 +85,7 @@ public class PurchasReport extends FormPanel {
 				toController.add(String.valueOf(year));
 				toController.add(String.valueOf(quarter));
 
-				AdministratorController.SendRequestPurchaseReport(toController);
+				AdministratorController.SendRequestPurchaseReport(toController, owner);
 				//get from DB the report
 				table.setVisible(true);
 			}

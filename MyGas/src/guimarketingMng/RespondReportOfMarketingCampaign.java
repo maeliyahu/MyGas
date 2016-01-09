@@ -156,7 +156,7 @@ public class RespondReportOfMarketingCampaign extends FormPanel {
 					//toController.add(0,""); //for method name
 					toController.add(String.valueOf(reqNum)); // campaign number
 
-					MarketingMngController.marketingCampaignReport(toController);
+					MarketingMngController.marketingCampaignReport(toController, owner);
 					((DefaultTableModel)table.getModel()).removeRow(chosenRow);
 					lblTheUpdate.setVisible(true);
 

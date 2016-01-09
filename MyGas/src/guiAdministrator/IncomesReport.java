@@ -87,7 +87,7 @@ public class IncomesReport extends FormPanel {
 				toController.add(String.valueOf(year));
 				toController.add(String.valueOf(quarter));
 				//get from DB the report
-				AdministratorController.SendRequestIncomeReport(toController);
+				AdministratorController.SendRequestIncomeReport(toController, owner);
 				table.setVisible(true);
 			}
 		});

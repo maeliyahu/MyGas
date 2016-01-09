@@ -26,6 +26,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -241,7 +243,7 @@ public class CampaignPatternDefining extends FormPanel {
 				boolean flag=true;
 				lblIllegalChoose.setVisible(false);
 				//get start date
-				
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM");
 				int startDay= spinStartDay.getValue();
 				int startMonth= spinStartMonth.getValue();
 				int startYear= spinStartYear.getValue();
@@ -249,7 +251,7 @@ public class CampaignPatternDefining extends FormPanel {
 				startDate.setDate(startDay);
 				startDate.setMonth(startMonth-1);
 				startDate.setYear(startYear);
-				 
+				String Startdateto=dateFormat.format(startDate);
 				int endDay= spinEndDay.getValue();
 				int endMonth= spinEndMonth.getValue();
 				int endYear= spinEndYear.getValue();
@@ -257,7 +259,8 @@ public class CampaignPatternDefining extends FormPanel {
 				endDate.setDate(endDay);
 				endDate.setMonth(endMonth-1);
 				endDate.setYear(endYear);
-				System.out.println(startDate.toString());
+				String Enddateto=dateFormat.format(endDate);
+				
 				
 				
 				//check legal date
@@ -294,13 +297,15 @@ public class CampaignPatternDefining extends FormPanel {
 					ArrayList<String> toController= new ArrayList<String>();
 					//toController.add(0,""); // for the method name
 					//toController.add(1, ""); //for the Campaign ID
-					toController.add(startDate.toString());
-					toController.add(endDate.toString());
+					
+					
+					toController.add(Startdateto);
+					toController.add(Enddateto);
 					toController.add(String.valueOf(spinStartHour.getValue()));
 					toController.add(String.valueOf(spinStartYear.getValue()));
 					toController.add(String.valueOf(spinEndHour.getValue()));
 					toController.add(String.valueOf(spinEndYear.getValue()));
-					MarketingEmployeeController.defineCampaginPattern(toController);
+					MarketingEmployeeController.defineCampaginPattern(toController,owner);
 				}
 					
 				

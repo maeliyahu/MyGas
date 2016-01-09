@@ -34,35 +34,35 @@ public class MarketingMng extends FormPanel {
 
 		btnPlanesPriceChange.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnPlanesPriceChange.setBackground(new Color(255, 255, 204));
-		btnPlanesPriceChange.setBounds(223, 111, 291, 41);
+		btnPlanesPriceChange.setBounds(223, 111, 308, 41);
 		add(btnPlanesPriceChange);
 		
 		JButton btnActivateCampaignPattern = new JButton("Activate Campaign Pattern");
 
 		btnActivateCampaignPattern.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnActivateCampaignPattern.setBackground(new Color(255, 255, 204));
-		btnActivateCampaignPattern.setBounds(223, 215, 291, 41);
+		btnActivateCampaignPattern.setBounds(223, 215, 308, 41);
 		add(btnActivateCampaignPattern);
 		
 		JButton btnUpdatePlanesPrice = new JButton("Update Planes Price");
 
 		btnUpdatePlanesPrice.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnUpdatePlanesPrice.setBackground(new Color(255, 255, 204));
-		btnUpdatePlanesPrice.setBounds(223, 163, 291, 41);
+		btnUpdatePlanesPrice.setBounds(223, 163, 308, 41);
 		add(btnUpdatePlanesPrice);
 		
 		JButton btnCharacterizationReport = new JButton("Characterization Report");
 
 		btnCharacterizationReport.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnCharacterizationReport.setBackground(new Color(255, 255, 204));
-		btnCharacterizationReport.setBounds(223, 318, 291, 41);
+		btnCharacterizationReport.setBounds(223, 318, 308, 41);
 		add(btnCharacterizationReport);
 		
 		JButton btnRespondReportOf = new JButton("Respond Report Of Marketing Campaign");
 
 		btnRespondReportOf.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRespondReportOf.setBackground(new Color(255, 255, 204));
-		btnRespondReportOf.setBounds(223, 267, 291, 40);
+		btnRespondReportOf.setBounds(223, 267, 308, 40);
 		add(btnRespondReportOf);
 		
 		JLabel name = new JLabel("");

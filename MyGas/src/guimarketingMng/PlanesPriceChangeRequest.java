@@ -19,6 +19,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class PlanesPriceChangeRequest extends FormPanel {
 	private JComboBox chckbxPlanType;
@@ -26,6 +28,7 @@ public class PlanesPriceChangeRequest extends FormPanel {
 	private JTextField discountText;
 	private JButton btnSendRequest;
 	private JLabel lblInsertNewDiscount;
+	private JLabel lblTheRequestSent;
 	/**
 	 * Create the panel.
 	 */
@@ -44,6 +47,7 @@ public class PlanesPriceChangeRequest extends FormPanel {
 		
 		
 		chckbxPlanType = new JComboBox();
+
 		chckbxPlanType.setBackground(new Color(255, 255, 204));
 		chckbxPlanType.setBounds(346, 153, 227, 23);
 		chckbxPlanType.addItem("Occasionally fueling"); //only 1 car
@@ -60,6 +64,7 @@ public class PlanesPriceChangeRequest extends FormPanel {
 		add(lblInsertNewDiscount);
 		
 		discountText = new JTextField();
+		
 		discountText.setBounds(367, 199, 206, 22);
 		add(discountText);
 		discountText.setColumns(10);
@@ -70,6 +75,12 @@ public class PlanesPriceChangeRequest extends FormPanel {
 		btnSendRequest.setBounds(300, 258, 170, 41);
 		add(btnSendRequest);
 		
+		lblTheRequestSent = new JLabel("The request sent successfully");
+		lblTheRequestSent.setForeground(new Color(255, 255, 204));
+		lblTheRequestSent.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblTheRequestSent.setBounds(281, 342, 239, 27);
+		add(lblTheRequestSent);
+		lblTheRequestSent.setVisible(false);
 		
 		btnSendRequest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -84,6 +95,7 @@ public class PlanesPriceChangeRequest extends FormPanel {
 					 toController.add(plan);
 					 toController.add(discount);
 					 MarketingMngController.planPriceChangeRequest(toController);
+					 lblTheRequestSent.setVisible(true);
 					 
 				 }
 				 catch(NumberFormatException e1)
@@ -94,7 +106,18 @@ public class PlanesPriceChangeRequest extends FormPanel {
 				
 			}
 		});
-		
+		chckbxPlanType.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lblTheRequestSent.setVisible(false);
+			}
+		});
+		discountText.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+				lblTheRequestSent.setVisible(false);
+			}
+		});
+	
 
 	} // end constructor
 }

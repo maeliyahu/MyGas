@@ -17,9 +17,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-
+import controllers.*;
 public class OrderFuel extends FormPanel {
-
+	/* need to bring the user Id from the connection*/
 	private JTextField textField;
 	private JLabel EmptyField;
 	/**
@@ -89,7 +89,6 @@ public class OrderFuel extends FormPanel {
 				}
 				if(flag){
 					ArrayList<String> toController=new ArrayList<String>();
-					toController.add("");
 					toController.add("userId");
 					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 					Date date=new Date();
@@ -98,10 +97,14 @@ public class OrderFuel extends FormPanel {
 					toController.add(textField.getText());
 					toController.add(comboBox.getSelectedItem().toString());
 					System.out.println(toController);
+					ClientComtroller.OrderFuel(toController,owner);
 					//toController.add()
 				}
 			}
 		});
+	}
+	public void displayAnswer(ArrayList<String> resultset){
+		this.textField.setText(resultset.get(0));
 	}
 	
 }

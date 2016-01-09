@@ -72,5 +72,6 @@ public class FormPanel extends JPanel  {
 	 * @param resultset
 	 */
 	public void displayAnswer(ArrayList<String> resultset) {
+		////*******in to be abstract
 	}
 }

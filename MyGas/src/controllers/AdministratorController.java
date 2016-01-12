@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class AdministratorController extends FormController {
-	
+	public final static int id = 3;
+	public AdministratorController(){
+		FormController.owner=this;
+	}
 	
 	/**
 	 * this method send request to define a campaign pattern and save the customer rating in DB

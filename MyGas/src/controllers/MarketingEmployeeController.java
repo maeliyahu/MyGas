@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class MarketingEmployeeController extends FormController {
+	public final static int id = 4;
 	static private Long campaginID=(long) 0;
 	
 	

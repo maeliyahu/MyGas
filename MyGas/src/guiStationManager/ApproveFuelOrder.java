@@ -26,9 +26,12 @@ import java.util.ArrayList;
 
 public class ApproveFuelOrder extends FormPanel {
 	private JTable table;
+	private JButton btnApprove;
 
 	/**
-	 * Create the panel.
+	 * this method create the "Approve Fuel Order" option panel(belong to station manager).
+	 * @param frame - the main frame (we have only one frame).
+	 * @param panelback - the previous panel , back panel will return to this panel.
 	 */
 	public ApproveFuelOrder(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
@@ -60,7 +63,7 @@ public class ApproveFuelOrder extends FormPanel {
 		
 		add(table);
 		
-		JButton btnApprove = new JButton("Approve");
+		btnApprove = new JButton("Approve");
 		btnApprove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}

@@ -35,10 +35,16 @@ import javax.swing.ImageIcon;
 import controllers.ClientComtroller;
 
 public class Client extends FormPanel {
-
+	private JLabel name;
+	private Image clientPic;
+	private JLabel clientIcon;
+	private JButton btnFollowOrder;
+	private JButton btnOrderFuel;
 /*684 x 442 ******/
 	/**
-	 * Create the panel.
+	 * this method create the client window panel
+	 * @param frame - the main frame (we have only one frame)
+	 * @param panelback - the previous panel , back panel will return to this panel
 	 */
 	public Client(JFrame frame,JPanel panelback ) {
 		super(frame,panelback);
@@ -47,27 +53,23 @@ public class Client extends FormPanel {
 		btnBack.setText("Logout");
 		
 
-		
-		
-		JLabel name = new JLabel("");
+		name = new JLabel("");
 		name.setBounds(80, 38, 46, 14);
 		add(name);
 		
-		Image clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
-		JLabel clientIcon = new JLabel();
+		clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
+		clientIcon = new JLabel();
 		clientIcon.setIcon(new ImageIcon(clientPic));
 		clientIcon.setBounds(662, 372, 128, 128);
 		add(clientIcon);
 		
-		JButton btnFollowOrder = new JButton("Follow Order");
+		btnFollowOrder = new JButton("Follow Order");
 		btnFollowOrder.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnFollowOrder.setBackground(new Color(255, 255, 204));
-
 		btnFollowOrder.setBounds(322, 150, 170, 41);
 		add(btnFollowOrder);
 		
-		JButton btnOrderFuel = new JButton("Order Fuel");
-
+		btnOrderFuel = new JButton("Order Fuel");
 		btnOrderFuel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnOrderFuel.setBackground(new Color(255, 255, 204));
 		btnOrderFuel.setBounds(322, 201, 170, 41);
@@ -87,9 +89,13 @@ public class Client extends FormPanel {
 		btnOrderFuel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OrderFuel order=new OrderFuel(null, owner);
+
 				owner.setVisible(false);
+				framel.remove(owner);
 				framel.getContentPane().add(order);
 				order.setVisible(true);
+	            framel.invalidate();
+	            framel.validate();
 			}
 		});
 	}

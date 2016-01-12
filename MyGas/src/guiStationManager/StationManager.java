@@ -20,9 +20,16 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
 public class StationManager extends FormPanel {
-
+	private JButton btnDeterminingTheThreshold;
+	private JButton btnApproveFuelOrder;
+	private JButton btnProduceQuarterlyReports;
+	private Image clientPic;
+	private JLabel clientIcon;
+	
 	/**
-	 * Create the panel.
+	 * this method create the Station manager window panel
+	 * @param frame - the main frame (we have only one frame)
+	 * @param panelback - the previous panel , back panel will return to this panel
 	 */
 	public StationManager(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
@@ -30,21 +37,21 @@ public class StationManager extends FormPanel {
 		path.setText("Login/Station Manager Window");
 		btnBack.setText("Logout");
 		
-		JButton btnDeterminingTheThreshold = new JButton("Determining the threshold");
+		btnDeterminingTheThreshold = new JButton("Determining the threshold");
 	
 		btnDeterminingTheThreshold.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnDeterminingTheThreshold.setBackground(new Color(255, 255, 204));
 		btnDeterminingTheThreshold.setBounds(253, 101, 245, 41);
 		add(btnDeterminingTheThreshold);
 		
-		JButton btnApproveFuelOrder = new JButton("Approve fuel order");
+		btnApproveFuelOrder = new JButton("Approve fuel order");
 		
 		btnApproveFuelOrder.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnApproveFuelOrder.setBackground(new Color(255, 255, 204));
 		btnApproveFuelOrder.setBounds(253, 155, 245, 41);
 		add(btnApproveFuelOrder);
 		
-		JButton btnProduceQuarterlyReports = new JButton("Produce Quarterly Reports");
+		btnProduceQuarterlyReports = new JButton("Produce Quarterly Reports");
 
 		btnProduceQuarterlyReports.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnProduceQuarterlyReports.setBackground(new Color(255, 255, 204));
@@ -54,8 +61,8 @@ public class StationManager extends FormPanel {
 		name.setBounds(80, 38, 46, 14);
 		add(name);
 		
-		Image clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
-		JLabel clientIcon = new JLabel();
+		clientPic=new ImageIcon(this.getClass().getResource("/client.png")).getImage();
+		clientIcon = new JLabel();
 		clientIcon.setIcon(new ImageIcon(clientPic));
 		clientIcon.setBounds(662, 372, 128, 128);
 		add(clientIcon); 
@@ -64,6 +71,9 @@ public class StationManager extends FormPanel {
 		 *  "Determining the threshold level for receiving alert"
 		 *  "Approve fuel order","Produce Quarterly Reports" */
 
+		
+		
+		//******* All listeners *******/ 
 		btnDeterminingTheThreshold.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DeterminingThreshold DetermingThreshold=new DeterminingThreshold(null,owner);

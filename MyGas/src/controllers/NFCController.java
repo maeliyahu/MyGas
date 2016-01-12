@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class NFCController extends FormController  {
+	public final static int id = 6;
 
 	/**
 	 * This method insert to DB the "sale" from NFC

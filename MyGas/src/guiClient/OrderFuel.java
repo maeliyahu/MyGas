@@ -23,7 +23,9 @@ public class OrderFuel extends FormPanel {
 	private JTextField textField;
 	private JLabel EmptyField;
 	/**
-	 * Create the panel.
+	 * this method create the order fuel option window panel(belong to client).
+	 * @param frame - the main frame (we have only one frame).
+	 * @param panelback - the previous panel , back panel will return to this panel.
 	 */
 	public OrderFuel(JFrame frame,JPanel panelback) {
 		super(frame,panelback);

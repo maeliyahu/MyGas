@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class StationMngController extends FormController {
+	public final static int id = 7;
 	/**
 	 * this method send to DB the required quarterly date report
 	 * @param resultset - the number of requested order

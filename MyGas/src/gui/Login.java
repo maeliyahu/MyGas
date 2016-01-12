@@ -1,6 +1,7 @@
 package gui;
 
 import guiStationManager.*;
+import ClientServ.*;
 import guiAdministrator.*;
 import guiClient.*;
 import guiMarkeingEmloyee.MarkeingEmloyee;
@@ -36,11 +37,14 @@ import javax.swing.JList;
 import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
 
+import controllers.LoginController;
+
 import java.awt.Image;
 import java.util.ArrayList;
 
+import ClientServ.*;
 
-public class Login {
+public class Login implements DisplayAble {
 	
 	public JFrame frame;
 	private JTextField Idnumber;
@@ -55,6 +59,14 @@ public class Login {
 	private JLabel lblPassword;
 	private JLabel EmptyField;
 	private ArrayList <String> login;
+	private Login check;
+	public Client cl;
+	public Setting set;
+	public StationManager stationMng;
+	public  MarketingMng marketMng;
+	public  Administrator admin;
+	public MarkeingEmloyee mrkEmp;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -64,6 +76,7 @@ public class Login {
 	 * Create the application.
 	 */
 	public Login() {
+		this.check=this;
 		initialize();
 	}
 
@@ -149,11 +162,34 @@ public class Login {
 		
 		
 		
-
+		/*##### client Manager Window #####*/
+		cl=new Client(frame,panel);
+		addPanel(cl);
+		/*##### client Manager Window #####*/
+		
+		/*##### station Manager Window #####*/
+		stationMng=new StationManager(frame,panel);
+		frame.getContentPane().add(stationMng);
+		/*##### station Manager Window #####*/
+		
+		/*##### marketing Manager Window #####*/
+		marketMng=new MarketingMng(frame,panel);
+		frame.getContentPane().add(marketMng);	
+		/*##### marketing Manager Window #####*/
+		
+		/*##### Administrator Manager Window #####*/
+		admin=new Administrator(frame,panel);
+		frame.getContentPane().add(admin);
+		/*##### Administrator Manager Window #####*/
+		
+		/*##### Administrator Manager Window #####*/
+		mrkEmp=new MarkeingEmloyee(frame,panel);
+		frame.getContentPane().add(mrkEmp);
+		/*##### Administrator Manager Window #####*/
 		
 		
 		/*##### Setting Window #####*/
-		final Setting set=new Setting(frame,panel);
+		set=new Setting(frame,panel);
 		frame.getContentPane().add(set);
 		JButton btSetting = new JButton("Setting");
 		btSetting.setBackground(new Color(255, 255, 204));
@@ -162,10 +198,7 @@ public class Login {
 		/*##### Setting Window #####*/	
 		
 		
-		/*##### marketing Manager Window #####*/
-		final MarketingMng marketMng=new MarketingMng(frame,panel);
-		frame.getContentPane().add(marketMng);	
-		/*##### marketing Manager Window #####*/
+
 		
 		/*##### NFC window #####*/
 		final NFC nfc=new NFC(frame,panel);
@@ -208,25 +241,23 @@ public class Login {
 					}
 					
 					
-				/*##### Client Window #####*/
+				/*##### Client Window #####
 				 if(TypeOfPerson.getSelectedItem().toString().equals("Client")){
 					/*##### over here  we need to put the client gui
 					 * Check here the id client in client table*/
 
-						final Client cl=new Client(frame,panel);
-						addPanel(cl);
+
 						//add if to check in DB 
-					 if(Passwrd.getText().equals("1234")){
-						 panel.setVisible(false);
-						 panel.remove(EmptyField);
-						 //Client.setVisible(false);
-						 cl.setVisible(true);
-					 }
-				}
+						 ArrayList<String> toController=new ArrayList<String>();
+						 toController.add(Idnumber.getText());
+						 toController.add(Passwrd.getText());
+						 LoginController.logintoDB(toController,check);
+
+				//}
 				/*##### Client Window #####*/	 
 				 
 				 
-				/*##### Employee Window #####*/
+				/*##### Employee Window #####
 				if(TypeOfPerson.getSelectedItem().toString().equals("Marketing Employee")){
 					final MarkeingEmloyee mrkEmp=new MarkeingEmloyee(frame,panel);
 					frame.getContentPane().add(mrkEmp);
@@ -237,7 +268,7 @@ public class Login {
 				/*##### Employee Window #####*/
 				
 				
-				/*##### Employee Window #####*/
+				/*##### Employee Window #####
 				if(TypeOfPerson.getSelectedItem().toString().equals("Marketing Manager")){
 					final MarketingMng mrkMng=new MarketingMng(frame,panel);
 					frame.getContentPane().add(mrkMng);
@@ -248,7 +279,7 @@ public class Login {
 				/*##### Employee Window #####*/
 				
 				
-				/*##### Administrator Window #####*/
+				/*##### Administrator Window #####
 				if(TypeOfPerson.getSelectedItem().toString().equals("Administrator")){
 					final Administrator admin=new Administrator(frame,panel);
 					frame.getContentPane().add(admin);
@@ -259,7 +290,7 @@ public class Login {
 				/*##### Administrator Window #####*/
 				
 				
-				/*##### Station Manager Window #####*/
+				/*##### Station Manager Window #####
 				if(TypeOfPerson.getSelectedItem().toString().equals("Station Manager")){
 					final StationManager stationMng=new StationManager(frame,panel);
 					frame.getContentPane().add(stationMng);
@@ -298,5 +329,45 @@ public class Login {
 	 */
 	public void addPanel(JPanel toAdd){
 		frame.getContentPane().add(toAdd);	
+	}
+	
+	//**** need to change*/
+	public void displayAnswer(ArrayList<String> resultset) {
+		if(resultset.get(0).equals("null"));
+		else if (resultset.get(4).equals("Client")){
+		////*******in to be abstract
+		
+		 panel.setVisible(false);
+		 panel.remove(EmptyField);
+		 //Client.setVisible(false);
+		 cl.setVisible(true);
+		}
+		
+		else if (resultset.get(4).equals("StationManager")){
+
+			panel.setVisible(false);
+			panel.remove(EmptyField);
+			stationMng.setVisible(true);
+		}
+		
+		else if (resultset.get(4).equals("Administrator")){
+			panel.setVisible(false);
+			panel.remove(EmptyField);
+			admin.setVisible(true);
+			
+		}
+		
+		else if (resultset.get(4).equals("MarketingManager")){
+			panel.setVisible(false);
+			panel.remove(EmptyField);
+			marketMng.setVisible(true);
+		}
+		else if (resultset.get(4).equals("MarketingRep")){
+			panel.setVisible(false);
+			panel.remove(EmptyField);
+			mrkEmp.setVisible(true);
+		}
+
+		
 	}
 }

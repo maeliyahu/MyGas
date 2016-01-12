@@ -6,13 +6,15 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public  class FormController {
-	private static JPanel display;
+	protected static JPanel display;
+	protected static  FormController owner;
 	
+
 	/**
 	 * this method show the return values from DB on specific panel
 	 * @param toGui- the values to show on panel
 	 */
-	static public  void returnToGui(ArrayList<String> toGui){
+	 static public  void returnToGui(ArrayList<String> toGui){
 		FormPanel toShow=(FormPanel)display;
 		toShow.displayAnswer(toGui);
 	}

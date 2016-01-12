@@ -6,9 +6,9 @@ import gui.*;
 
 import javax.swing.JPanel;
 
-public class ClientComtroller extends FormController  {
+public class ClientComtroller extends FormController {
 
-	
+	public final static int id = 2;
 	/**
 	 * this method request from DB the client's orders
 	 * @param resultset - the number of requested order
@@ -40,6 +40,10 @@ public class ClientComtroller extends FormController  {
 		set(dis);
 		resultset.add(0, "clientOrders");
 		System.out.println(resultset);		
+	}
+	
+	public void displayAnswer(ArrayList<String> toGui){
+		
 	}
 	
 

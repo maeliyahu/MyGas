@@ -23,9 +23,14 @@ import java.util.ArrayList;
 
 public class DeterminingThreshold extends FormPanel {
 	private JTextField textField;
-
+	private JLabel lblInsertThreshold;
+	private JButton button;
+	private JComboBox comboBox;
+	private JLabel lblFuelType;
 	/**
-	 * Create the panel.
+	 * this method create the "DeterminingThreshold" option panel(belong to station manager).
+	 * @param frame - the main frame (we have only one frame).
+	 * @param panelback - the previous panel , back panel will return to this panel.
 	 */
 	public DeterminingThreshold(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
@@ -38,30 +43,32 @@ public class DeterminingThreshold extends FormPanel {
 		textField.setBounds(375, 179, 157, 24);
 		add(textField);
 		
-		JLabel lblInsertThreshold = new JLabel("Insert Threshold:");
+		lblInsertThreshold = new JLabel("Insert Threshold:");
 		lblInsertThreshold.setForeground(new Color(255, 255, 204));
 		lblInsertThreshold.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblInsertThreshold.setBounds(227, 177, 136, 27);
 		add(lblInsertThreshold);
 		
-		JButton button = new JButton("Done");
+		button = new JButton("Done");
 	
 		button.setBackground(new Color(255, 255, 204));
 		button.setBounds(227, 231, 305, 45);
 		add(button);
 		
 		String[] fuelType={"gasoline","motor","diesel","home"};
-		JComboBox comboBox = new JComboBox(fuelType);
+		comboBox = new JComboBox(fuelType);
 		comboBox.setBackground(new Color(255, 255, 204));
 		comboBox.setBounds(375, 143, 157, 25);
 		add(comboBox);
 		
-		JLabel lblFuelType = new JLabel("Fuel Type");
+		lblFuelType = new JLabel("Fuel Type");
 		lblFuelType.setForeground(new Color(255, 255, 204));
 		lblFuelType.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblFuelType.setBounds(227, 139, 136, 27);
 		add(lblFuelType);
 		
+		
+		//******* All listeners *******/ 
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean flag=true;

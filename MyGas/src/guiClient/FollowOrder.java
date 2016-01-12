@@ -19,7 +19,13 @@ import javax.swing.JFrame;
 import controllers.ClientComtroller;
 
 public class FollowOrder extends FormPanel {
-
+	private JComboBox comboBox;
+	private JLabel orderNum;
+	/**
+	 * this method create the "follow order" option panel(belong to client).
+	 * @param frame - the main frame (we have only one frame).
+	 * @param panelback - the previous panel , back panel will return to this panel.
+	 */
 	public FollowOrder(JFrame frame,JPanel panelback) {
 		super(frame,panelback);
 		title.setText("Follow Order Window");
@@ -27,12 +33,14 @@ public class FollowOrder extends FormPanel {
 
 		ClientComtroller.RequestOrders(new ArrayList<String>(), owner);
 		String[] fuelType={"gasoline","motor","diesel","home"};
-		JComboBox comboBox = new JComboBox();
+		
+		
+		comboBox = new JComboBox();
 		comboBox.setBackground(new Color(255, 255, 204));
 		comboBox.setBounds(399, 154, 121, 25);
 		add(comboBox);
 		
-		JLabel orderNum = new JLabel("Choose order Number:");
+		orderNum = new JLabel("Choose order Number:");
 		orderNum.setFont(new Font("Tahoma", Font.BOLD, 14));
 		orderNum.setForeground(new Color(255, 255, 204));
 		orderNum.setBounds(229, 152, 191, 25);

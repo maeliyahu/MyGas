@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+import ClientServ.*;
 public class Setting extends FormPanel {
 	private JTextField textField;
 	private JTextField textField_1;
@@ -69,6 +69,7 @@ public class Setting extends FormPanel {
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				boolean flag=true;
 				String input = textField_1.getText();
 				try
 				{
@@ -82,7 +83,9 @@ public class Setting extends FormPanel {
 				{
 					textField_1.setText("Error");
 					textField_1.setForeground(Color.RED);
+					flag=false;
 				}
+				
 			}
 		});
 

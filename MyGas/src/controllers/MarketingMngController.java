@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class MarketingMngController extends FormController {
+	public final static int id = 5;
 
 	/**
 	 * this method send request to change plan price 
@@ -78,19 +79,8 @@ public class MarketingMngController extends FormController {
 	{
 		set(dis);
 		//method name
-		String type=resultset.get(0);
-		switch(type)
-		{
-			case("Incomes report"):
-				resultset.add(0, "produceIncomeQReport");
-			break;
-			case("Purchase report"):
-				resultset.add(0, "producePurchasesQReport");
-			break;
-			case("Inventory report"):
-				resultset.add(0, "produceInventoryQReport");
-			break;
-		}
+		resultset.add(0, "produceCreateCharacterizationReport");
+		
 		System.out.println(resultset);
 		//sent to client
 	}

@@ -23,7 +23,9 @@ import controllers.AdministratorController;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+
 import javax.swing.ListSelectionModel;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -192,4 +194,6 @@ public class SendResponse extends FormPanel{
 		}); 
 
 	}// end constructor
+	
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

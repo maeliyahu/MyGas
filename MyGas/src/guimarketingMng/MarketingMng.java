@@ -16,6 +16,7 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 
@@ -115,5 +116,5 @@ public class MarketingMng extends FormPanel {
 			}
 		});
 	}
-
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

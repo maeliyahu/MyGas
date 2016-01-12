@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class ProduceCustomerRating extends FormPanel {
 
@@ -39,4 +40,5 @@ public class ProduceCustomerRating extends FormPanel {
 			}
 		});
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

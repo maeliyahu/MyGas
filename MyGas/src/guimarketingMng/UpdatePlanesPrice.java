@@ -181,4 +181,5 @@ public class UpdatePlanesPrice extends FormPanel {
 		});
 		
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

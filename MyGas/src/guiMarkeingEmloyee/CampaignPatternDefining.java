@@ -314,4 +314,5 @@ public class CampaignPatternDefining extends FormPanel {
 		});
 		
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

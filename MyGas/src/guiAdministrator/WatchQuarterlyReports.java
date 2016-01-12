@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 
@@ -82,4 +83,5 @@ public class WatchQuarterlyReports extends FormPanel {
 			}
 		});
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

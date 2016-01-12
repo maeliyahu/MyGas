@@ -92,5 +92,5 @@ public class InventoryReport extends FormPanel {
 		});
 		
 	}
-
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

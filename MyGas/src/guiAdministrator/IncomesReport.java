@@ -92,4 +92,5 @@ public class IncomesReport extends FormPanel {
 			}
 		});
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

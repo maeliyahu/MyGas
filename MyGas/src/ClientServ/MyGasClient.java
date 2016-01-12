@@ -65,6 +65,25 @@ public class MyGasClient extends AbstractClient
 		 LoginController logincontrol=(LoginController)control;
 		 logincontrol.displayAnswer((ArrayList<String>)msg);
 	 }
+	 if(flag==ClientComtroller.id){
+		 System.out.println((ArrayList<String>)msg);
+	 }
+	 if(flag==AdministratorController.id){
+		 
+	 }
+	 if(flag==MarketingEmployeeController.id){
+		 
+	 }
+	 if(flag==MarketingMngController.id){
+		 
+	 }
+	 if(flag==NFCController.id){
+		 
+	 }
+	 if(flag==StationMngController.id){
+		 
+	 }
+	 
 	 
   }
 
@@ -75,6 +94,7 @@ public class MyGasClient extends AbstractClient
    */
   public void handleMessageFromControllers(ArrayList<String> str) //the first element in array list will be the idMethod
   {
+	  System.out.println("server" + str);
     try
     {
     	sendToServer(str);

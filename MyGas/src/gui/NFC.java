@@ -135,5 +135,7 @@ public class NFC extends FormPanel {
 		});
 
 	}
-
+	
+	
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

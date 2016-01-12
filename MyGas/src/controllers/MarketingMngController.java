@@ -45,7 +45,15 @@ public class MarketingMngController extends FormController {
 		//method name
 		resultset.add(0, "approveChangePriceRequests"); // ??? is this the method?
 		System.out.println(resultset);
-		//sent to client
+
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 	
 	/**
@@ -59,7 +67,15 @@ public class MarketingMngController extends FormController {
 		//method name
 		resultset.add(0, "activateCampingPatten"); // 
 		System.out.println(resultset);
-		//sent to client
+		
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 	/**
 	 * This method create a marketing campaign report in DB
@@ -72,7 +88,15 @@ public class MarketingMngController extends FormController {
 		//method name
 		resultset.add(0, "campaignReport");
 		System.out.println(resultset);
-		//sent to client
+		
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 	
 	static public void createCharacterizationReport(ArrayList<String> resultset,JPanel dis)
@@ -82,6 +106,14 @@ public class MarketingMngController extends FormController {
 		resultset.add(0, "produceCreateCharacterizationReport");
 		
 		System.out.println(resultset);
-		//sent to client
+
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 }

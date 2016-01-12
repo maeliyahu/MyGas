@@ -69,5 +69,5 @@ public class ProduceQuarterlyReports extends FormPanel {
 		});
 	
 	}
-
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

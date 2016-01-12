@@ -115,4 +115,5 @@ public class CharacterizationReport extends FormPanel {
 			}
 		});
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

@@ -91,5 +91,5 @@ public class PurchasReport extends FormPanel {
 			}
 		});
 	}
-
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

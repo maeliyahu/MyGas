@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import ClientServ.*;
 
 public class Login implements DisplayAble {
-	
+	final public static String stationId="11";
 	public JFrame frame;
 	private JTextField Idnumber;
 	private JTextField Passwrd;
@@ -333,7 +333,14 @@ public class Login implements DisplayAble {
 	
 	//**** need to change*/
 	public void displayAnswer(ArrayList<String> resultset) {
-		if(resultset.get(0).equals("null"));
+		//System.out.println("here" +resultset);
+		if(resultset.get(0).equals("Password incorrect")){
+
+			Passwrd.setText("Password incorrect");
+		}
+		else if(resultset.get(0).equals("Not Exist")){
+			Idnumber.setText("Not Exist");
+		}
 		else if (resultset.get(4).equals("Client")){
 		////*******in to be abstract
 		

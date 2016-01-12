@@ -120,4 +120,5 @@ public class PlanesPriceChangeRequest extends FormPanel {
 	
 
 	} // end constructor
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

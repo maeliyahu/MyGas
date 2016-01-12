@@ -15,6 +15,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
@@ -106,5 +108,5 @@ public class MarkeingEmloyee extends FormPanel {
 			}
 		});
 	}
-
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

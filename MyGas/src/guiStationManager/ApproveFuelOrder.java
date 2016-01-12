@@ -75,4 +75,5 @@ public class ApproveFuelOrder extends FormPanel {
 		
 		
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

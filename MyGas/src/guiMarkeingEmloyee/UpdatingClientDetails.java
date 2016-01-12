@@ -495,10 +495,7 @@ public class UpdatingClientDetails extends FormPanel {
 				} //end if
 			}// end action
 		});
-		
-		
-
-
 
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

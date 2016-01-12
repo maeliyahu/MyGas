@@ -1,5 +1,6 @@
 package guiMarkeingEmloyee;
 import controllers.MarketingEmployeeController;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -472,4 +473,5 @@ public class ClientReg extends FormPanel {
 		});
 
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

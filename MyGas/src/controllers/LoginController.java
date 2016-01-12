@@ -35,14 +35,23 @@ public class LoginController extends FormController {
 	
 	
 	 static public  void displayAnswer(ArrayList<String> toGui){
-		 System.out.println("here");
-		 check.displayAnswer(toGui);
-		if(toGui.get(1).equals(password)){
-		check.displayAnswer(toGui);
+		 System.out.println("here" + toGui.size());
+		 if (toGui.size()==0){
+				toGui.add(0, "Not Exist");
+				check.displayAnswer(toGui);
+		 }
+		 else if(toGui.get(1).equals(password)){
+			System.out.println(password);
+			System.out.println(toGui.get(1));
+			check.displayAnswer(toGui);
+		 }
+		else {
+				toGui.add(0, "Password incorrect");
+				check.displayAnswer(toGui);
+				
 		}
-		else{
-			toGui.add(0, "null");
-		}
+
+		password="";
 			
 	}
 

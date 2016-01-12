@@ -23,7 +23,15 @@ public class MarketingEmployeeController extends FormController {
 		//method name
 		resultset.add(0, "addClientToDB");
 		System.out.println(resultset);
-		//sent to client
+
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 		
 	}
 	/**
@@ -37,7 +45,15 @@ public class MarketingEmployeeController extends FormController {
 		//method name
 		resultset.add(0, "updateClient");
 		System.out.println(resultset);
-		//sent to client
+
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 	/**
 	 * this method send request to calculate and save the customer rating in DB
@@ -50,7 +66,15 @@ public class MarketingEmployeeController extends FormController {
 		//method name
 		resultset.add(0, "calcRating");
 		System.out.println(resultset);
-		//sent to client
+
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 	/**
 	 * this method send request to define a campaign pattern and save the customer rating in DB
@@ -65,7 +89,16 @@ public class MarketingEmployeeController extends FormController {
 		resultset.add(0, "insertCampingPattenToDB");
 		resultset.add(1, campaginID.toString());
 		System.out.println(resultset);
-		//sent to client
+		
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
+		
 	}
 	
 }

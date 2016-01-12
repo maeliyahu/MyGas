@@ -46,8 +46,17 @@ public class FollowOrder extends FormPanel {
 		orderNum.setBounds(229, 152, 191, 25);
 		add(orderNum);
 		
+		JButton btnShowOrders = new JButton("Show Orders");
+
+		btnShowOrders.setBounds(313, 74, 107, 23);
+		add(btnShowOrders);
 		
-
-
+		
+		btnShowOrders.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
 	}
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

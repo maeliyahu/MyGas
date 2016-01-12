@@ -16,6 +16,14 @@ public class NFCController extends FormController  {
 		set(dis);
 		resultset.add(0, "name of mathod");
 		System.out.println(resultset);
-		//send to client
+		
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 }

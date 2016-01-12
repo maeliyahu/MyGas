@@ -1,10 +1,13 @@
 package controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import gui.*;
 
 import javax.swing.JPanel;
+
+import ClientServ.MyGasClient;
 
 public class ClientComtroller extends FormController {
 
@@ -17,7 +20,15 @@ public class ClientComtroller extends FormController {
 	static public void FollowOrder(ArrayList<String> resultset ,JPanel dis){
 		set(dis);
 		resultset.add(0, "name of mathod");
-		//sent to client
+
+		/*send to ClientServer
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}	
+		/*send to ClientServer*/
 	}
 	
 	/**
@@ -34,6 +45,12 @@ public class ClientComtroller extends FormController {
 		toClient.add("Good");
 		returnToGui(toClient);
 		/*Test only*/
+		try{
+		MyGasClient clientS=new MyGasClient("127.0.0.1",5555,(FormController)owner,id);
+		clientS.setflag(id);
+		clientS.handleMessageFromControllers(resultset);
+		}
+		catch(IOException e){}
 
 	}
 	static public void RequestOrders(ArrayList<String> resultset ,JPanel dis){

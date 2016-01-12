@@ -165,5 +165,5 @@ public class RespondReportOfMarketingCampaign extends FormPanel {
 			} // end approve action
 		});
 	}
-
+	public void displayAnswer(ArrayList<String> resultset) {}
 }

@@ -89,8 +89,16 @@ public class DeterminingThreshold extends FormPanel {
 				}
 				if(flag){
 					ArrayList<String> toController=new ArrayList<String>();
-					toController.add(comboBox.getSelectedItem().toString());
+					if(comboBox.getSelectedItem().toString().equals("gasoline"))
+						toController.add("1");
+					if(comboBox.getSelectedItem().toString().equals("motor"))
+						toController.add("2");
+					if(comboBox.getSelectedItem().toString().equals("diesel"))
+						toController.add("3");
+					if(comboBox.getSelectedItem().toString().equals("home"))
+						toController.add("4");
 					toController.add(textField.getText());
+					toController.add(Login.stationId);
 					StationMngController.DeterminingThreshold(toController, owner);
 					
 				}
